@@ -1,0 +1,62 @@
+{
+    "title": "Whirlpool Assessment",
+    "description": "This brief assessment will help you map your current whirlpool state across all layers of wellbeing.",
+    "instructions": "For each statement, indicate how true it is for you on a scale from 1 (Not at all true) to 5 (Very true).",
+    "questions": [
+      {
+        "id": "wairua_1",
+        "layer": "wairua",
+        "text": "I have a clear sense of meaning and purpose in my life",
+        "type": "scale"
+      },
+      {
+        "id": "wairua_2",
+        "layer": "wairua",
+        "text": "I feel connected to something larger than myself",
+        "type": "scale"
+      },
+      {
+        "id": "wairua_3",
+        "layer": "wairua",
+        "text": "I live according to my core values",
+        "type": "scale"
+      },
+      {
+        "id": "mauri_1",
+        "layer": "mauri",
+        "text": "I have sufficient energy for the activities that matter to me",
+        "type": "scale"
+      },
+      {
+        "id": "mauri_2",
+        "layer": "mauri",
+        "text": "I engage in activities that energize and revitalize me",
+        "type": "scale"
+      },
+      {
+        "id": "mauri_3",
+        "layer": "mauri",
+        "text": "I can identify what drains my energy and manage it effectively",
+        "type": "scale"
+      },
+      {
+        "id": "mind_1",
+        "layer": "mind",
+        "text": "I can recognize and work with difficult thoughts and emotions",
+        "type": "scale"
+      },
+      {
+        "id": "mind_2",
+        "layer": "mind",
+        "text": "I have a generally positive relationship with myself",
+        "type": "scale"
+      },
+      {
+        "id": "mind_3",
+        "layer": "mind",
+        "text": "I can adapt my thinking when faced with new situations",
+        "type": "scale"
+      }
+    ]
+  }
+  

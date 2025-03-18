@@ -1,0 +1,102 @@
+{
+    "title": "The Whirlpool of Thrive Model",
+    "description": "The Whirlpool of Thrive is a holistic model of wellbeing that recognizes the interconnected layers of our existence, from our spiritual core to our environmental context.",
+    "layers": [
+      {
+        "id": "wairua",
+        "name": "Wairua / Spirit",
+        "description": "The core of your whirlpool - your spiritual essence, connection to purpose, meaning, and values.",
+        "prompts": [
+          "What gives your life meaning and purpose?",
+          "What values are most important to you?",
+          "How do you connect with something larger than yourself?"
+        ],
+        "color": "#87CEEB",
+        "icon": "Star"
+      },
+      {
+        "id": "mauri",
+        "name": "Mauri / Energy",
+        "description": "Your life force and vitality - the energy that animates and sustains you through each day.",
+        "prompts": [
+          "How is your overall energy level?",
+          "What activities energize you?",
+          "What drains your energy?"
+        ],
+        "color": "#90EE90",
+        "icon": "Zap"
+      },
+      {
+        "id": "mind",
+        "name": "Mind",
+        "description": "Your thoughts, emotions, beliefs, and mental patterns that shape your experience.",
+        "prompts": [
+          "What thought patterns do you notice?",
+          "How do you relate to difficult emotions?",
+          "What beliefs shape your view of yourself and the world?"
+        ],
+        "color": "#F5DEB3",
+        "icon": "Brain"
+      },
+      {
+        "id": "nervous",
+        "name": "Nervous System",
+        "description": "Your body's stress response and regulation system that influences how you respond to life.",
+        "prompts": [
+          "How does your body respond to stress?",
+          "What helps you feel calm and centered?",
+          "How do you recover after challenging experiences?"
+        ],
+        "color": "#D8BFD8",
+        "icon": "Activity"
+      },
+      {
+        "id": "body",
+        "name": "Body",
+        "description": "Your physical health, movement, rest, and sensory experience of the world.",
+        "prompts": [
+          "How do you care for your physical health?",
+          "What is your relationship with movement and rest?",
+          "How do you experience the world through your senses?"
+        ],
+        "color": "#B0C4DE",
+        "icon": "Heart"
+      },
+      {
+        "id": "relationship",
+        "name": "Relationships",
+        "description": "Your connections with others - family, friends, partners, and colleagues.",
+        "prompts": [
+          "What are your most important relationships?",
+          "How do you give and receive support?",
+          "What patterns do you notice in your relationships?"
+        ],
+        "color": "#FFB6C1",
+        "icon": "Users"
+      },
+      {
+        "id": "community",
+        "name": "Community",
+        "description": "Your belonging to groups, communities, and collective identities.",
+        "prompts": [
+          "What communities are you part of?",
+          "How do you contribute to your communities?",
+          "Where do you feel a sense of belonging?"
+        ],
+        "color": "#98FB98",
+        "icon": "Home"
+      },
+      {
+        "id": "environment",
+        "name": "Environment",
+        "description": "Your physical surroundings, access to nature, and the broader ecology you're part of.",
+        "prompts": [
+          "How does your environment affect your wellbeing?",
+          "What is your connection to the natural world?",
+          "How do you shape and respond to your surroundings?"
+        ],
+        "color": "#AFEEEE",
+        "icon": "Globe"
+      }
+    ]
+  }
