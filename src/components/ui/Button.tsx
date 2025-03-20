@@ -14,20 +14,20 @@ export function Button({
   ...props 
 }: ButtonProps) {
   
-  const baseStyles = "inline-flex items-center justify-center rounded-md font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wairua focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
+  const baseStyles = "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wairua focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
   
   const variantStyles = {
-    default: "bg-gradient-to-r from-wairua to-wairua-dark text-white hover:shadow-md hover:translate-y-[-1px]",
-    secondary: "bg-mauri-dark text-white hover:bg-mauri hover:shadow-md",
-    outline: "border-2 border-wairua text-wairua hover:bg-wairua/10 hover:shadow-sm",
+    default: "bg-wairua-dark text-white hover:bg-wairua",
+    secondary: "bg-mauri-dark text-white hover:bg-mauri",
+    outline: "border border-wairua text-wairua hover:bg-wairua/10",
     ghost: "hover:bg-wairua/10 text-wairua-dark",
   };
   
   const sizeStyles = {
-    sm: "h-9 px-3 text-sm rounded-md",
-    default: "h-10 py-2 px-4 text-sm rounded-md",
-    lg: "h-11 px-6 text-base rounded-md",
-    xl: "h-12 px-8 text-base rounded-lg font-semibold",
+    sm: "h-9 px-3 text-sm",
+    default: "h-10 py-2 px-4 text-sm",
+    lg: "h-11 px-6 text-base",
+    xl: "h-12 px-8 text-base font-semibold",
   };
   
   return (

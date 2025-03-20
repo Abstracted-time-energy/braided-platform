@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
-      <body className="min-h-screen bg-gray-50 text-gray-900 font-sans">
+      <body className="min-h-screen bg-gray-50 font-sans">
         {children}
       </body>
     </html>

@@ -1,102 +1,259 @@
 {
-    "title": "The Whirlpool of Thrive Model",
-    "description": "The Whirlpool of Thrive is a holistic model of wellbeing that recognizes the interconnected layers of our existence, from our spiritual core to our environmental context.",
-    "layers": [
-      {
-        "id": "wairua",
-        "name": "Wairua / Spirit",
-        "description": "The core of your whirlpool - your spiritual essence, connection to purpose, meaning, and values.",
-        "prompts": [
-          "What gives your life meaning and purpose?",
-          "What values are most important to you?",
-          "How do you connect with something larger than yourself?"
-        ],
-        "color": "#87CEEB",
-        "icon": "Star"
-      },
-      {
-        "id": "mauri",
-        "name": "Mauri / Energy",
-        "description": "Your life force and vitality - the energy that animates and sustains you through each day.",
-        "prompts": [
-          "How is your overall energy level?",
-          "What activities energize you?",
-          "What drains your energy?"
-        ],
-        "color": "#90EE90",
-        "icon": "Zap"
-      },
-      {
-        "id": "mind",
-        "name": "Mind",
-        "description": "Your thoughts, emotions, beliefs, and mental patterns that shape your experience.",
-        "prompts": [
-          "What thought patterns do you notice?",
-          "How do you relate to difficult emotions?",
-          "What beliefs shape your view of yourself and the world?"
-        ],
-        "color": "#F5DEB3",
-        "icon": "Brain"
-      },
-      {
-        "id": "nervous",
-        "name": "Nervous System",
-        "description": "Your body's stress response and regulation system that influences how you respond to life.",
-        "prompts": [
-          "How does your body respond to stress?",
-          "What helps you feel calm and centered?",
-          "How do you recover after challenging experiences?"
-        ],
-        "color": "#D8BFD8",
-        "icon": "Activity"
-      },
-      {
-        "id": "body",
-        "name": "Body",
-        "description": "Your physical health, movement, rest, and sensory experience of the world.",
-        "prompts": [
-          "How do you care for your physical health?",
-          "What is your relationship with movement and rest?",
-          "How do you experience the world through your senses?"
-        ],
-        "color": "#B0C4DE",
-        "icon": "Heart"
-      },
-      {
-        "id": "relationship",
-        "name": "Relationships",
-        "description": "Your connections with others - family, friends, partners, and colleagues.",
-        "prompts": [
-          "What are your most important relationships?",
-          "How do you give and receive support?",
-          "What patterns do you notice in your relationships?"
-        ],
-        "color": "#FFB6C1",
-        "icon": "Users"
-      },
-      {
-        "id": "community",
-        "name": "Community",
-        "description": "Your belonging to groups, communities, and collective identities.",
-        "prompts": [
-          "What communities are you part of?",
-          "How do you contribute to your communities?",
-          "Where do you feel a sense of belonging?"
-        ],
-        "color": "#98FB98",
-        "icon": "Home"
-      },
-      {
-        "id": "environment",
-        "name": "Environment",
-        "description": "Your physical surroundings, access to nature, and the broader ecology you're part of.",
-        "prompts": [
-          "How does your environment affect your wellbeing?",
-          "What is your connection to the natural world?",
-          "How do you shape and respond to your surroundings?"
-        ],
-        "color": "#AFEEEE",
-        "icon": "Globe"
-      }
-    ]
+  "title": "The Whirlpool of Thrive Model",
+  "description": "The Whirlpool of Thrive is a holistic model of wellbeing that recognizes the interconnected layers of our existence, from our spiritual core to our environmental context.",
+  "layers": [
+    {
+      "id": "wairua",
+      "name": "Wairua / Spirit",
+      "description": "The core of your whirlpool - your spiritual essence, connection to purpose, meaning, and values.",
+      "prompts": [
+        "What gives your life meaning and purpose?",
+        "What values are most important to you?",
+        "How do you connect with something larger than yourself?"
+      ],
+      "color": "#87CEEB",
+      "colorLight": "#e0f5ff",
+      "colorDark": "#5BA3D0",
+      "icon": "Star",
+      "order": 1,
+      "reflectionPrompts": [
+        "When do you feel most connected to your sense of purpose?",
+        "How might you align your daily actions more closely with your core values?",
+        "What practices help you connect with your spiritual dimension?"
+      ],
+      "blockageIndications": [
+        "Feeling disconnected from purpose",
+        "Value conflicts or confusion",
+        "Spiritual emptiness or questioning"
+      ],
+      "flowStates": [
+        "Clarity of purpose",
+        "Alignment with values",
+        "Sense of connection to something greater"
+      ]
+    },
+    {
+      "id": "mauri",
+      "name": "Mauri / Energy",
+      "description": "Your life force and vitality - the energy that animates and sustains you through each day.",
+      "prompts": [
+        "How is your overall energy level?",
+        "What activities energize you?",
+        "What drains your energy?"
+      ],
+      "color": "#90EE90",
+      "colorLight": "#d1f0e0",
+      "colorDark": "#3CB371",
+      "icon": "Zap",
+      "order": 2,
+      "reflectionPrompts": [
+        "When do you feel most energized and alive?",
+        "How might you structure your day to honor your natural energy rhythms?",
+        "What practices help you restore your energy when depleted?"
+      ],
+      "blockageIndications": [
+        "Chronic fatigue or exhaustion",
+        "Energy crashes or inconsistency",
+        "Feeling drained by activities that once energized you"
+      ],
+      "flowStates": [
+        "Sustainable energy throughout the day",
+        "Vitality and aliveness",
+        "Natural rhythms of activity and rest"
+      ]
+    },
+    {
+      "id": "mind",
+      "name": "Mind",
+      "description": "Your thoughts, emotions, beliefs, and mental patterns that shape your experience.",
+      "prompts": [
+        "What thought patterns do you notice?",
+        "How do you relate to difficult emotions?",
+        "What beliefs shape your view of yourself and the world?"
+      ],
+      "color": "#F5DEB3",
+      "colorLight": "#f0e0d1",
+      "colorDark": "#DEB887",
+      "icon": "Brain",
+      "order": 3,
+      "reflectionPrompts": [
+        "When do you experience mental clarity and peace?",
+        "How might you respond to challenging thoughts with greater compassion?",
+        "What beliefs serve your wellbeing, and which might be limiting you?"
+      ],
+      "blockageIndications": [
+        "Rumination or thought loops",
+        "Harsh self-criticism",
+        "Rigid or limiting beliefs"
+      ],
+      "flowStates": [
+        "Mental clarity and flexibility",
+        "Emotional awareness and regulation",
+        "Helpful and supportive belief systems"
+      ]
+    },
+    {
+      "id": "nervous",
+      "name": "Nervous System",
+      "description": "Your body's stress response and regulation system that influences how you respond to life.",
+      "prompts": [
+        "How does your body respond to stress?",
+        "What helps you feel calm and centered?",
+        "How do you recover after challenging experiences?"
+      ],
+      "color": "#D8BFD8",
+      "colorLight": "#e0d1f0",
+      "colorDark": "#9370DB",
+      "icon": "Activity",
+      "order": 4,
+      "reflectionPrompts": [
+        "When does your nervous system feel most settled and regulated?",
+        "How might you recognize early signs of dysregulation?",
+        "What practices help you return to a state of calm after activation?"
+      ],
+      "blockageIndications": [
+        "Chronic stress or anxiety",
+        "Shutdown or numbing responses",
+        "Difficulty returning to baseline after stress"
+      ],
+      "flowStates": [
+        "Resilient response to stressors",
+        "Ability to self-regulate",
+        "Balance between activation and rest"
+      ]
+    },
+    {
+      "id": "body",
+      "name": "Body",
+      "description": "Your physical health, movement, rest, and sensory experience of the world.",
+      "prompts": [
+        "How do you care for your physical health?",
+        "What is your relationship with movement and rest?",
+        "How do you experience the world through your senses?"
+      ],
+      "color": "#B0C4DE",
+      "colorLight": "#d1e0f0",
+      "colorDark": "#6495ED",
+      "icon": "Heart",
+      "order": 5,
+      "reflectionPrompts": [
+        "When does your body feel most alive and well?",
+        "How might you honor your body's needs more fully?",
+        "What sensory experiences bring you joy and grounding?"
+      ],
+      "blockageIndications": [
+        "Chronic pain or tension",
+        "Disconnection from bodily sensations",
+        "Ignoring physical needs"
+      ],
+      "flowStates": [
+        "Embodied presence",
+        "Balance of movement and rest",
+        "Attunement to physical needs"
+      ]
+    },
+    {
+      "id": "relationship",
+      "name": "Relationships",
+      "description": "Your connections with others - family, friends, partners, and colleagues.",
+      "prompts": [
+        "What are your most important relationships?",
+        "How do you give and receive support?",
+        "What patterns do you notice in your relationships?"
+      ],
+      "color": "#FFB6C1",
+      "colorLight": "#f0d1e0",
+      "colorDark": "#DB7093",
+      "icon": "Users",
+      "order": 6,
+      "reflectionPrompts": [
+        "When do you feel most connected and understood by others?",
+        "How might you cultivate more authentic relationships?",
+        "What boundaries would support healthier connections?"
+      ],
+      "blockageIndications": [
+        "Isolation or loneliness",
+        "Conflict or misunderstanding",
+        "Patterns of disconnection"
+      ],
+      "flowStates": [
+        "Authentic connection",
+        "Mutual support and understanding",
+        "Healthy boundaries"
+      ]
+    },
+    {
+      "id": "community",
+      "name": "Community",
+      "description": "Your belonging to groups, communities, and collective identities.",
+      "prompts": [
+        "What communities are you part of?",
+        "How do you contribute to your communities?",
+        "Where do you feel a sense of belonging?"
+      ],
+      "color": "#98FB98",
+      "colorLight": "#e0f0d1",
+      "colorDark": "#3CB371",
+      "icon": "Home",
+      "order": 7,
+      "reflectionPrompts": [
+        "When do you experience a genuine sense of belonging?",
+        "How might your gifts and talents serve your community?",
+        "What communities align with your values and aspirations?"
+      ],
+      "blockageIndications": [
+        "Feeling like an outsider",
+        "Lack of meaningful contribution",
+        "Disconnection from shared purpose"
+      ],
+      "flowStates": [
+        "Sense of belonging",
+        "Meaningful contribution",
+        "Collective support and resilience"
+      ]
+    },
+    {
+      "id": "environment",
+      "name": "Environment",
+      "description": "Your physical surroundings, access to nature, and the broader ecology you're part of.",
+      "prompts": [
+        "How does your environment affect your wellbeing?",
+        "What is your connection to the natural world?",
+        "How do you shape and respond to your surroundings?"
+      ],
+      "color": "#AFEEEE",
+      "colorLight": "#d1f0f0",
+      "colorDark": "#5F9EA0",
+      "icon": "Globe",
+      "order": 8,
+      "reflectionPrompts": [
+        "When do your surroundings most support your wellbeing?",
+        "How might you create spaces that nourish rather than deplete you?",
+        "What forms of connection with nature restore your sense of balance?"
+      ],
+      "blockageIndications": [
+        "Disconnection from natural world",
+        "Chaotic or depleting surroundings",
+        "Environmental stressors"
+      ],
+      "flowStates": [
+        "Harmony with surroundings",
+        "Nourishing connection to nature",
+        "Environmental stewardship"
+      ]
+    }
+  ],
+  "visualProperties": {
+    "layerGap": 5,
+    "coreSize": 15,
+    "flowAnimation": true,
+    "rippleEffect": true,
+    "interactiveHighlight": true
+  },
+  "modelConcepts": {
+    "flow": "The natural movement of energy, resources, and information between layers when blockages are removed.",
+    "blockage": "Restriction or inhibition that prevents smooth flow between layers, often manifesting as distress or dysfunction.",
+    "resonance": "How changes in one layer naturally affect and influence other layers, creating ripple effects throughout the whirlpool.",
+    "integration": "The harmony that emerges when all layers are acknowledged and supported in their unique functions and interconnections."
   }
+}

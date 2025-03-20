@@ -27,6 +27,9 @@ export default function MainLayout({ children }: MainLayoutProps) {
             <Link href="/chat" className="font-medium text-gray-600 hover:text-wairua-dark transition-colors">
               Chat
             </Link>
+            <Link href="/interact" className="font-medium text-gray-600 hover:text-wairua-dark transition-colors">
+              Interact
+            </Link>
           </nav>
           <div className="flex items-center gap-3">
             <Link href="/login" className="hidden md:inline-block font-medium text-gray-600 hover:text-wairua-dark">
