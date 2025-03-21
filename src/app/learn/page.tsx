@@ -1,102 +1,116 @@
-"use client";
-
 import React from 'react';
 import MainLayout from '@/components/layout/MainLayout';
-import { Button } from '@/components/ui/Button';
-import Link from 'next/link';
 import InteractiveWhirlpool from '@/components/whirlpool/InteractiveWhirlpool';
-import WaveDivider from '@/components/ui/WaveDivider';
-
-// Import the whirlpool model data
-import whirlpoolModel from '@/content/whirlpool/model.json';
+import whirlpoolData from '@/content/whirlpool/model.json';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
 export default function LearnPage() {
+  // Update the order property for layers after Genetics
+  const updatedLayers = whirlpoolData.layers.map(layer => {
+    // For the new Genetics layer (assuming it's already in the model.json)
+    if (layer.id === 'genetics') {
+      return {
+        ...layer,
+        order: 3, // Set order to 3 (after Energy)
+      };
+    }
+    
+    // For layers that should come after Genetics
+    if (layer.id !== 'wairua' && layer.id !== 'mauri' && layer.id !== 'genetics') {
+      return {
+        ...layer,
+        order: layer.order + 1, // Increment order for all other layers
+      };
+    }
+    
+    // Keep wairua and mauri layers as they are
+    return layer;
+  });
+
+  const sortedLayers = [...updatedLayers].sort((a, b) => a.order - b.order);
+
   return (
     <MainLayout>
-      {/* Hero section with subtle background */}
-      <div className="bg-gradient-to-b from-wairua-light/30 to-white pt-16 pb-8">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-montserrat font-light mb-6 text-gray-800 leading-tight">
-              Understanding the <span className="text-wairua-dark">Whirlpool</span> of Thrive
-            </h1>
-            
-            <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              {whirlpoolModel.description}
-            </p>
-
-            <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-sm">
-              <p className="text-gray-700 leading-relaxed">
-                The Whirlpool of Thrive model views you as a dynamic system—a whirlpool in the river of life—with 
-                interconnected layers from your spiritual core outward to your environmental context. 
-                Explore each layer below to understand how they interact and influence your overall wellbeing.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Wave Divider */}
-      <WaveDivider color="#ffffff" />
-      
-      {/* Interactive Whirlpool Section - Now the Primary Focus */}
-      <div className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="mb-10 text-center">
-              <h2 className="text-3xl font-montserrat font-light text-gray-800 mb-4">
-                Explore Your Whirlpool
-              </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Click or hover over each layer to discover its meaning and reflection questions. 
-                Notice how each layer connects with those around it, creating a unified system.
-              </p>
-            </div>
-            
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold mb-6 text-gray-800">
+            {whirlpoolData.title}
+          </h1>
+          
+          <p className="text-xl text-gray-600 mb-12">
+            {whirlpoolData.description}
+          </p>
+          
+          <div className="relative mb-16">
             <InteractiveWhirlpool />
-            
-            <div className="mt-12 max-w-3xl mx-auto text-center">
-              <p className="text-gray-600 mb-8">
-                The Whirlpool model invites you to observe where flow is restricted in your life and where it moves freely.
-                By understanding these patterns, you can make small adjustments that ripple through your entire system.
-              </p>
-              
-              <div className="rounded-lg bg-wairua-light/30 p-6 mb-10">
-                <h3 className="text-xl font-montserrat font-light text-gray-800 mb-3">Key Concepts</h3>
-                <div className="grid md:grid-cols-2 gap-4 text-left">
-                  <div className="p-4">
-                    <h4 className="font-medium text-wairua-dark">Flow</h4>
-                    <p className="text-sm text-gray-600">{whirlpoolModel.modelConcepts?.flow || "The natural movement of energy, resources, and information between layers."}</p>
-                  </div>
-                  <div className="p-4">
-                    <h4 className="font-medium text-wairua-dark">Blockage</h4>
-                    <p className="text-sm text-gray-600">{whirlpoolModel.modelConcepts?.blockage || "Restriction that prevents smooth flow between layers, often manifesting as distress."}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-      </div>
-      
-      {/* Wave Divider */}
-      <WaveDivider color="#f9fafb" inverted={true} />
-      
-      {/* Call to Action */}
-      <div className="py-16 bg-gray-50 text-center">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-montserrat font-light text-gray-800 mb-6">
-              Ready to Explore Your Own Whirlpool?
-            </h2>
-            <p className="text-gray-600 mb-8">
-              Take the assessment to gain insights into your unique wellbeing patterns.
-            </p>
-            <Link href="/assessment">
-              <Button size="lg" className="transform transition hover:translate-y-[-2px] hover:shadow-md">
-                Begin Your Assessment
-              </Button>
-            </Link>
+          
+          <div className="grid gap-8 mb-16">
+            <h2 className="text-3xl font-semibold mb-4">The Layers of Wellbeing</h2>
+            
+            {sortedLayers.map((layer) => (
+              <Card key={layer.id} className="overflow-hidden">
+                <div 
+                  className="h-2" 
+                  style={{ backgroundColor: layer.color }}
+                ></div>
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    {/* Use dynamic icon rendering without lucide-react direct import */}
+                    <span className={`text-${layer.id}-500`}>
+                      {/* Icon will be handled by CSS classes */}
+                    </span>
+                    <CardTitle>{layer.name}</CardTitle>
+                  </div>
+                  <p className="text-sm text-gray-500 mt-1">
+                    {layer.description}
+                  </p>
+                </CardHeader>
+                <CardContent>
+                  <h4 className="font-medium mb-2">Reflection Questions:</h4>
+                  <ul className="list-disc pl-5 space-y-1 mb-4">
+                    {layer.reflectionPrompts.map((prompt, i) => (
+                      <li key={i}>{prompt}</li>
+                    ))}
+                  </ul>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="font-medium mb-2">Blockage Indications:</h4>
+                      <ul className="list-disc pl-5 space-y-1">
+                        {layer.blockageIndications.map((indication, i) => (
+                          <li key={i}>{indication}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium mb-2">Flow States:</h4>
+                      <ul className="list-disc pl-5 space-y-1">
+                        {layer.flowStates.map((state, i) => (
+                          <li key={i}>{state}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="mb-16">
+            <h2 className="text-3xl font-semibold mb-6">Key Concepts</h2>
+            <div className="grid gap-6 md:grid-cols-2">
+              {Object.entries(whirlpoolData.modelConcepts).map(([key, value]) => (
+                <Card key={key}>
+                  <CardHeader>
+                    <CardTitle className="capitalize">{key}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p>{value}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </div>

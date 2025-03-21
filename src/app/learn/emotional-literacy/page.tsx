@@ -185,9 +185,7 @@ export default function InteractPage() {
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
                   <h4 className="font-medium text-wairua-dark mb-2">Primary Emotional Systems</h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Jaak Panksepp identified seven primary emotional systems that all mammals share:
-                  </p>
+        
                   <ul className="text-xs text-gray-600 space-y-1 pl-4">
                     {(Object.entries(emotionDetails) as [EmotionId, {name: string, description: string}][]).map(([id, emotion]) => (
                       <li key={id} className="flex items-center">
@@ -200,13 +198,14 @@ export default function InteractPage() {
                       </li>
                     ))}
                   </ul>
+                  <p className="text-xs text-gray-600 mt-3">
+                All mammals share these seven core emotional states
+                  </p>
                 </div>
                 
                 <div>
                   <h4 className="font-medium text-wairua-dark mb-2">Emotion Regulation Systems</h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Paul Gilbert's Compassion Focused Therapy identifies three key systems:
-                  </p>
+            
                   <ul className="text-xs text-gray-600 space-y-1 list-disc pl-4">
                     <li><span className="font-medium">Threat System:</span> Protective responses (FEAR, RAGE, PANIC/GRIEF)</li>
                     <li><span className="font-medium">Drive System:</span> Achievement and resource seeking (SEEKING, LUST)</li>
@@ -218,10 +217,8 @@ export default function InteractPage() {
                 </div>
                 
                 <div>
-                  <h4 className="font-medium text-wairua-dark mb-2">Mentalization</h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Mentalization is our ability to understand mental states in ourselves and others. It has four dimensions:
-                  </p>
+                  <h4 className="font-medium text-wairua-dark mb-2">Mentalisation</h4>
+
                   <ul className="text-xs text-gray-600 space-y-1 list-disc pl-4">
                     <li><span className="font-medium">Self-focused:</span> Understanding your own mind</li>
                     <li><span className="font-medium">Other-focused:</span> Understanding others' minds</li>
@@ -229,7 +226,7 @@ export default function InteractPage() {
                     <li><span className="font-medium">Explicit:</span> Conscious, deliberate reflection</li>
                   </ul>
                   <p className="text-xs text-gray-600 mt-3">
-                    Strong mentalization skills help us navigate emotional interactions effectively.
+                    Strong mentalisation skills help us navigate emotional interactions effectively.
                   </p>
                 </div>
               </div>
@@ -317,7 +314,7 @@ export default function InteractPage() {
                   {/* Mentalization Insight */}
                   <div className="mt-auto">
                     <div className="p-4 bg-white rounded-md border-l-4 border-wairua-dark">
-                      <h4 className="font-medium text-gray-700 mb-1">Mentalization Insight</h4>
+                      <h4 className="font-medium text-gray-700 mb-1">Mentalisation Insight</h4>
                       <p className="text-sm text-gray-600">{selectedInteraction.mentalizationInsight}</p>
                     </div>
                   </div>
@@ -349,7 +346,7 @@ export default function InteractPage() {
                 </p>
               </div>
               <div className="bg-white p-4 rounded-md shadow-sm">
-                <h3 className="font-medium text-wairua-dark">2. Mentalize the Other Person</h3>
+                <h3 className="font-medium text-wairua-dark">2. Mentalise the Other Person</h3>
                 <p className="text-sm text-gray-600">
                   "What emotional system might be active for them? What needs or fears might be driving their behavior?"
                 </p>

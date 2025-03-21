@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Import whirlpool model data
@@ -62,24 +62,37 @@ interface Layer {
   flowStates?: string[];
 }
 
-// Enhance the layers with color variants if they don't already have them
-const enhancedLayers = whirlpoolModel.layers.map((layer: any) => {
-  if (layer.colorLight && layer.colorDark) {
-    return layer as Layer;
-  }
-  
-  const colorVariants = generateColorVariants(layer.color);
-  return {
-    ...layer,
-    colorLight: colorVariants.light,
-    colorDark: colorVariants.dark
-  } as Layer;
-});
-
 export default function InteractiveWhirlpool() {
   // Explicitly type the state variables to accept string or null
   const [activeLayer, setActiveLayer] = useState<string | null>(null);
   const [hoverLayer, setHoverLayer] = useState<string | null>(null);
+  const [enhancedLayers, setEnhancedLayers] = useState<Layer[]>([]);
+
+  useEffect(() => {
+    // Enhance the layers with color variants if they don't already have them
+    // and sort them by order property
+    const processedLayers = whirlpoolModel.layers
+      .map((layer: any) => {
+        if (layer.colorLight && layer.colorDark) {
+          return layer as Layer;
+        }
+        
+        const colorVariants = generateColorVariants(layer.color);
+        return {
+          ...layer,
+          colorLight: colorVariants.light,
+          colorDark: colorVariants.dark
+        } as Layer;
+      })
+      .sort((a: Layer, b: Layer) => {
+        // Sort by order property, defaulting to 999 if not defined
+        const orderA = a.order !== undefined ? a.order : 999;
+        const orderB = b.order !== undefined ? b.order : 999;
+        return orderA - orderB;
+      });
+    
+    setEnhancedLayers(processedLayers);
+  }, []);
 
   // Calculate the focused layer
   const focusedLayer = activeLayer || hoverLayer;

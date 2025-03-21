@@ -1,15 +1,16 @@
 {
   "title": "The Whirlpool of Thrive Model",
-  "description": "The Whirlpool of Thrive is a holistic model of wellbeing that recognizes the interconnected layers of our existence, from our spiritual core to our environmental context.",
+  "description": "The Whirlpool of Thrive is a holistic model of wellbeing that recognises the interconnected layers of our existence, from our core to our environmental context and back again.",
   "layers": [
     {
       "id": "wairua",
-      "name": "Wairua / Spirit",
-      "description": "The core of your whirlpool - your spiritual essence, connection to purpose, meaning, and values.",
+      "name": "Spirit",
+      "description": "The core of your whirlpool - your spiritual essence, connection to peace, purpose, meaning, and values.",
       "prompts": [
         "What gives your life meaning and purpose?",
         "What values are most important to you?",
-        "How do you connect with something larger than yourself?"
+        "How do you connect with something larger than yourself?",
+        "When are you most at peace?"
       ],
       "color": "#87CEEB",
       "colorLight": "#e0f5ff",
@@ -24,7 +25,9 @@
       "blockageIndications": [
         "Feeling disconnected from purpose",
         "Value conflicts or confusion",
-        "Spiritual emptiness or questioning"
+        "Spiritual emptiness or questioning",
+        "Hopelessness"
+      
       ],
       "flowStates": [
         "Clarity of purpose",
@@ -34,11 +37,12 @@
     },
     {
       "id": "mauri",
-      "name": "Mauri / Energy",
+      "name": "Energy",
       "description": "Your life force and vitality - the energy that animates and sustains you through each day.",
       "prompts": [
         "How is your overall energy level?",
-        "What activities energize you?",
+        "How do you feel when you wake up in the morning?",
+        "What activities energise you?",
         "What drains your energy?"
       ],
       "color": "#90EE90",
@@ -47,19 +51,52 @@
       "icon": "Zap",
       "order": 2,
       "reflectionPrompts": [
-        "When do you feel most energized and alive?",
-        "How might you structure your day to honor your natural energy rhythms?",
+        "When do you feel most energised and alive?",
+        "How might you structure your day to honour your natural energy rhythms?",
         "What practices help you restore your energy when depleted?"
       ],
       "blockageIndications": [
         "Chronic fatigue or exhaustion",
         "Energy crashes or inconsistency",
-        "Feeling drained by activities that once energized you"
+        "Feeling drained by activities that once energised you",
+        "Blunted emotions or disconnection"
       ],
       "flowStates": [
         "Sustainable energy throughout the day",
         "Vitality and aliveness",
         "Natural rhythms of activity and rest"
+      ]
+    },
+    {
+      "id": "genetics",
+      "name": "Genetics",
+      "description": "Your biological inheritance that shapes your predispositions, tendencies, and unique traits.",
+      "prompts": [
+        "What inherited traits do you recognize in yourself?",
+        "How do your genetic predispositions influence your wellbeing?",
+        "What family patterns have you observed across generations?",
+        "How do you work with your biological tendencies?"
+      ],
+      "color": "#FFD700",
+      "colorLight": "#fff8d1",
+      "colorDark": "#DAA520",
+      "icon": "Dna",
+      "order": 3,
+      "reflectionPrompts": [
+        "When do you feel most at peace with your inherited traits?",
+        "How might you honor your genetic inheritance while creating your own path?",
+        "What genetic strengths can you build upon for greater wellbeing?"
+      ],
+      "blockageIndications": [
+        "Genetic determinism or fatalism",
+        "Resistance to inherited traits",
+        "Ignoring biological needs or limitations",
+        "Perpetuating unhealthy family patterns"
+      ],
+      "flowStates": [
+        "Integration of inherited traits",
+        "Working with rather than against biology",
+        "Transcending limiting genetic patterns"
       ]
     },
     {
@@ -75,7 +112,7 @@
       "colorLight": "#f0e0d1",
       "colorDark": "#DEB887",
       "icon": "Brain",
-      "order": 3,
+      "order": 4,
       "reflectionPrompts": [
         "When do you experience mental clarity and peace?",
         "How might you respond to challenging thoughts with greater compassion?",
@@ -105,7 +142,7 @@
       "colorLight": "#e0d1f0",
       "colorDark": "#9370DB",
       "icon": "Activity",
-      "order": 4,
+      "order": 5,
       "reflectionPrompts": [
         "When does your nervous system feel most settled and regulated?",
         "How might you recognize early signs of dysregulation?",
@@ -135,7 +172,7 @@
       "colorLight": "#d1e0f0",
       "colorDark": "#6495ED",
       "icon": "Heart",
-      "order": 5,
+      "order": 6,
       "reflectionPrompts": [
         "When does your body feel most alive and well?",
         "How might you honor your body's needs more fully?",
@@ -165,7 +202,7 @@
       "colorLight": "#f0d1e0",
       "colorDark": "#DB7093",
       "icon": "Users",
-      "order": 6,
+      "order": 7,
       "reflectionPrompts": [
         "When do you feel most connected and understood by others?",
         "How might you cultivate more authentic relationships?",
@@ -195,7 +232,7 @@
       "colorLight": "#e0f0d1",
       "colorDark": "#3CB371",
       "icon": "Home",
-      "order": 7,
+      "order": 8,
       "reflectionPrompts": [
         "When do you experience a genuine sense of belonging?",
         "How might your gifts and talents serve your community?",
@@ -225,7 +262,7 @@
       "colorLight": "#d1f0f0",
       "colorDark": "#5F9EA0",
       "icon": "Globe",
-      "order": 8,
+      "order": 9,
       "reflectionPrompts": [
         "When do your surroundings most support your wellbeing?",
         "How might you create spaces that nourish rather than deplete you?",
