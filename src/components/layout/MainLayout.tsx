@@ -79,6 +79,15 @@ export default function MainLayout({ children }: MainLayoutProps) {
                       Overview
                     </Link>
                     <Link
+                      href="/learn/biological-foundation"
+                      className={`block px-4 py-2 text-sm ${
+                        pathname === '/learn/biological-foundation' ? 'bg-gray-100 text-wairua-dark' : 'text-gray-700 hover:bg-gray-100'
+                      }`}
+                      onClick={() => setLearnDropdownOpen(false)}
+                    >
+                      Biological Foundations
+                    </Link>
+                    <Link
                       href="/learn/emotional-literacy"
                       className={`block px-4 py-2 text-sm ${
                         pathname === '/learn/emotional-literacy' ? 'bg-gray-100 text-wairua-dark' : 'text-gray-700 hover:bg-gray-100'
@@ -172,6 +181,13 @@ export default function MainLayout({ children }: MainLayoutProps) {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Learn
+              </Link>
+              <Link 
+                href="/learn/biological-foundation"
+                className="font-medium text-gray-600 hover:text-wairua-dark pl-4 border-l-2 border-gray-200"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Biological Foundations
               </Link>
               <Link 
                 href="/learn/emotional-literacy"

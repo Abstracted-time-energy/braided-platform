@@ -3,8 +3,21 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Import whirlpool model data
-import whirlpoolModel from '@/content/whirlpool/model.json';
+// Define types for layer data
+interface Layer {
+  id: string;
+  name: string;
+  description: string;
+  prompts: string[];
+  color: string;
+  colorLight?: string;
+  colorDark?: string;
+  icon: string;
+  order: number;
+  reflectionPrompts?: string[];
+  blockageIndications?: string[];
+  flowStates?: string[];
+}
 
 // Helper function to generate lighter and darker variants of a color
 const generateColorVariants = (baseColor: string) => {
@@ -46,52 +59,312 @@ const generateColorVariants = (baseColor: string) => {
   };
 };
 
-// Define types for layer data
-interface Layer {
-  id: string;
-  name: string;
-  description: string;
-  prompts: string[];
-  color: string;
-  colorLight?: string;
-  colorDark?: string;
-  icon: string;
-  order?: number;
-  reflectionPrompts?: string[];
-  blockageIndications?: string[];
-  flowStates?: string[];
-}
+// Hardcoded whirlpool layers with genetics included
+const WHIRLPOOL_LAYERS: Layer[] = [
+  {
+    id: "wairua",
+    name: "Spirit",
+    description: "The core of your whirlpool - your spiritual essence, connection to peace, purpose, meaning, and values.",
+    prompts: [
+      "What gives your life meaning and purpose?",
+      "What values are most important to you?",
+      "How do you connect with something larger than yourself?",
+      "When are you most at peace?"
+    ],
+    color: "#87CEEB",
+    colorLight: "#e0f5ff",
+    colorDark: "#5BA3D0",
+    icon: "Star",
+    order: 1,
+    reflectionPrompts: [
+      "When do you feel most connected to your sense of purpose?",
+      "How might you align your daily actions more closely with your core values?",
+      "What practices help you connect with your spiritual dimension?"
+    ],
+    blockageIndications: [
+      "Feeling disconnected from purpose",
+      "Value conflicts or confusion",
+      "Spiritual emptiness or questioning",
+      "Hopelessness"
+    ],
+    flowStates: [
+      "Clarity of purpose",
+      "Alignment with values",
+      "Sense of connection to something greater"
+    ]
+  },
+  {
+    id: "genetics",
+    name: "Genetics",
+    description: "Your biological inheritance that shapes your predispositions, tendencies, and unique traits.",
+    prompts: [
+      "What inherited traits do you recognize in yourself?",
+      "How do your genetic predispositions influence your wellbeing?",
+      "What family patterns have you observed across generations?",
+      "How do you work with your biological tendencies?"
+    ],
+    color: "#FFD700",
+    colorLight: "#fff8d1",
+    colorDark: "#DAA520",
+    icon: "Dna",
+    order: 3,
+    reflectionPrompts: [
+      "When do you feel most at peace with your inherited traits?",
+      "How might you honor your genetic inheritance while creating your own path?",
+      "What genetic strengths can you build upon for greater wellbeing?"
+    ],
+    blockageIndications: [
+      "Genetic determinism or fatalism",
+      "Resistance to inherited traits",
+      "Ignoring biological needs or limitations",
+      "Perpetuating unhealthy family patterns"
+    ],
+    flowStates: [
+      "Integration of inherited traits",
+      "Working with rather than against biology",
+      "Transcending limiting genetic patterns"
+    ]
+    
+  },
+  {
+    id: "mauri",
+    name: "Energy",
+    description: "Your life force and vitality - the energy that animates and sustains you through each day.",
+    prompts: [
+      "How is your overall energy level?",
+      "How do you feel when you wake up in the morning?",
+      "What activities energise you?",
+      "What drains your energy?"
+    ],
+    color: "#90EE90",
+    colorLight: "#d1f0e0",
+    colorDark: "#3CB371",
+    icon: "Zap",
+    order: 2,
+    reflectionPrompts: [
+      "When do you feel most energised and alive?",
+      "How might you structure your day to honour your natural energy rhythms?",
+      "What practices help you restore your energy when depleted?"
+    ],
+    blockageIndications: [
+      "Chronic fatigue or exhaustion",
+      "Energy crashes or inconsistency",
+      "Feeling drained by activities that once energised you",
+      "Blunted emotions or disconnection"
+    ],
+    flowStates: [
+      "Sustainable energy throughout the day",
+      "Vitality and aliveness",
+      "Natural rhythms of activity and rest"
+    ]
+  
+  },
+  {
+    id: "mind",
+    name: "Mind",
+    description: "Your thoughts, emotions, beliefs, and mental patterns that shape your experience.",
+    prompts: [
+      "What thought patterns do you notice?",
+      "How do you relate to difficult emotions?",
+      "What beliefs shape your view of yourself and the world?"
+    ],
+    color: "#F5DEB3",
+    colorLight: "#f0e0d1",
+    colorDark: "#DEB887",
+    icon: "Brain",
+    order: 4,
+    reflectionPrompts: [
+      "When do you experience mental clarity and peace?",
+      "How might you respond to challenging thoughts with greater compassion?",
+      "What beliefs serve your wellbeing, and which might be limiting you?"
+    ],
+    blockageIndications: [
+      "Rumination or thought loops",
+      "Harsh self-criticism",
+      "Rigid or limiting beliefs"
+    ],
+    flowStates: [
+      "Mental clarity and flexibility",
+      "Emotional awareness and regulation",
+      "Helpful and supportive belief systems"
+    ]
+  },
+  {
+    id: "nervous",
+    name: "Nervous System",
+    description: "Your body's stress response and regulation system that influences how you respond to life.",
+    prompts: [
+      "How does your body respond to stress?",
+      "What helps you feel calm and centered?",
+      "How do you recover after challenging experiences?"
+    ],
+    color: "#D8BFD8",
+    colorLight: "#e0d1f0",
+    colorDark: "#9370DB",
+    icon: "Activity",
+    order: 5,
+    reflectionPrompts: [
+      "When does your nervous system feel most settled and regulated?",
+      "How might you recognize early signs of dysregulation?",
+      "What practices help you return to a state of calm after activation?"
+    ],
+    blockageIndications: [
+      "Chronic stress or anxiety",
+      "Shutdown or numbing responses",
+      "Difficulty returning to baseline after stress"
+    ],
+    flowStates: [
+      "Resilient response to stressors",
+      "Ability to self-regulate",
+      "Balance between activation and rest"
+    ]
+  },
+  {
+    id: "body",
+    name: "Body",
+    description: "Your physical health, movement, rest, and sensory experience of the world.",
+    prompts: [
+      "How do you care for your physical health?",
+      "What is your relationship with movement and rest?",
+      "How do you experience the world through your senses?"
+    ],
+    color: "#B0C4DE",
+    colorLight: "#d1e0f0",
+    colorDark: "#6495ED",
+    icon: "Heart",
+    order: 6,
+    reflectionPrompts: [
+      "When does your body feel most alive and well?",
+      "How might you honor your body's needs more fully?",
+      "What sensory experiences bring you joy and grounding?"
+    ],
+    blockageIndications: [
+      "Chronic pain or tension",
+      "Disconnection from bodily sensations",
+      "Ignoring physical needs"
+    ],
+    flowStates: [
+      "Embodied presence",
+      "Balance of movement and rest",
+      "Attunement to physical needs"
+    ]
+  },
+  {
+    id: "relationship",
+    name: "Relationships",
+    description: "Your connections with others - family, friends, partners, and colleagues.",
+    prompts: [
+      "What are your most important relationships?",
+      "How do you give and receive support?",
+      "What patterns do you notice in your relationships?"
+    ],
+    color: "#FFB6C1",
+    colorLight: "#f0d1e0",
+    colorDark: "#DB7093",
+    icon: "Users",
+    order: 7,
+    reflectionPrompts: [
+      "When do you feel most connected and understood by others?",
+      "How might you cultivate more authentic relationships?",
+      "What boundaries would support healthier connections?"
+    ],
+    blockageIndications: [
+      "Isolation or loneliness",
+      "Conflict or misunderstanding",
+      "Patterns of disconnection"
+    ],
+    flowStates: [
+      "Authentic connection",
+      "Mutual support and understanding",
+      "Healthy boundaries"
+    ]
+  },
+  {
+    id: "community",
+    name: "Community",
+    description: "Your belonging to groups, communities, and collective identities.",
+    prompts: [
+      "What communities are you part of?",
+      "How do you contribute to your communities?",
+      "Where do you feel a sense of belonging?"
+    ],
+    color: "#98FB98",
+    colorLight: "#e0f0d1",
+    colorDark: "#3CB371",
+    icon: "Home",
+    order: 8,
+    reflectionPrompts: [
+      "When do you experience a genuine sense of belonging?",
+      "How might your gifts and talents serve your community?",
+      "What communities align with your values and aspirations?"
+    ],
+    blockageIndications: [
+      "Feeling like an outsider",
+      "Lack of meaningful contribution",
+      "Disconnection from shared purpose"
+    ],
+    flowStates: [
+      "Sense of belonging",
+      "Meaningful contribution",
+      "Collective support and resilience"
+    ]
+  },
+  {
+    id: "environment",
+    name: "Environment",
+    description: "Your physical surroundings, access to nature, and the broader ecology you're part of.",
+    prompts: [
+      "How does your environment affect your wellbeing?",
+      "What is your connection to the natural world?",
+      "How do you shape and respond to your surroundings?"
+    ],
+    color: "#AFEEEE",
+    colorLight: "#d1f0f0",
+    colorDark: "#5F9EA0",
+    icon: "Globe",
+    order: 9,
+    reflectionPrompts: [
+      "When do your surroundings most support your wellbeing?",
+      "How might you create spaces that nourish rather than deplete you?",
+      "What forms of connection with nature restore your sense of balance?"
+    ],
+    blockageIndications: [
+      "Disconnection from natural world",
+      "Chaotic or depleting surroundings",
+      "Environmental stressors"
+    ],
+    flowStates: [
+      "Harmony with surroundings",
+      "Nourishing connection to nature",
+      "Environmental stewardship"
+    ]
+  }
+];
 
-export default function InteractiveWhirlpool() {
+export default function StandaloneInteractiveWhirlpool() {
   // Explicitly type the state variables to accept string or null
   const [activeLayer, setActiveLayer] = useState<string | null>(null);
   const [hoverLayer, setHoverLayer] = useState<string | null>(null);
-  const [enhancedLayers, setEnhancedLayers] = useState<Layer[]>([]);
-
+  const [processedLayers, setProcessedLayers] = useState<Layer[]>([]);
+  
   useEffect(() => {
-    // Enhance the layers with color variants if they don't already have them
-    // and sort them by order property
-    const processedLayers = whirlpoolModel.layers
-      .map((layer: any) => {
-        if (layer.colorLight && layer.colorDark) {
-          return layer as Layer;
-        }
-        
-        const colorVariants = generateColorVariants(layer.color);
+    // Process layers once on component mount
+    const enhancedLayers = WHIRLPOOL_LAYERS.map(layer => {
+      // If color variants are not provided, generate them
+      if (!layer.colorLight || !layer.colorDark) {
+        const variants = generateColorVariants(layer.color);
         return {
           ...layer,
-          colorLight: colorVariants.light,
-          colorDark: colorVariants.dark
-        } as Layer;
-      })
-      .sort((a: Layer, b: Layer) => {
-        // Sort by order property, defaulting to 999 if not defined
-        const orderA = a.order !== undefined ? a.order : 999;
-        const orderB = b.order !== undefined ? b.order : 999;
-        return orderA - orderB;
-      });
+          colorLight: variants.light,
+          colorDark: variants.dark
+        };
+      }
+      return layer;
+    });
     
-    setEnhancedLayers(processedLayers);
+    // Sort layers by order
+    const sortedLayers = [...enhancedLayers].sort((a, b) => a.order - b.order);
+    setProcessedLayers(sortedLayers);
   }, []);
 
   // Calculate the focused layer
@@ -103,9 +376,9 @@ export default function InteractiveWhirlpool() {
         {/* Whirlpool Visualization */}
         <div className="relative w-full md:w-1/2 aspect-square max-w-md mx-auto">
           {/* Render layers from outside in */}
-          {[...enhancedLayers].reverse().map((layer, idx) => {
+          {[...processedLayers].reverse().map((layer, idx) => {
             const isActive = focusedLayer === layer.id;
-            const size = 100 - (idx * (75 / enhancedLayers.length));
+            const size = 100 - (idx * (75 / processedLayers.length));
             
             return (
               <motion.div
@@ -132,7 +405,7 @@ export default function InteractiveWhirlpool() {
                 onMouseEnter={() => setHoverLayer(layer.id)}
                 onMouseLeave={() => setHoverLayer(null)}
               >
-                {idx === enhancedLayers.length - 1 && (
+                {idx === processedLayers.length - 1 && (
                   <div className="text-white text-sm md:text-base font-medium">
                     Core
                   </div>
@@ -194,7 +467,7 @@ export default function InteractiveWhirlpool() {
                 transition={{ duration: 0.3 }}
               >
                 {(() => {
-                  const layer = enhancedLayers.find(l => l.id === focusedLayer);
+                  const layer = processedLayers.find(l => l.id === focusedLayer);
                   if (!layer) return null;
                   
                   return (
@@ -268,8 +541,6 @@ export default function InteractiveWhirlpool() {
       </div>
       
       <div className="mt-8 text-sm text-gray-500 italic text-center px-4">
-        The whirlpool model recognizes that wellbeing emerges from the interconnected flow between all layers of our existence,
-        from our deepest spiritual core to our outer environmental context.
       </div>
     </div>
   );
