@@ -9,15 +9,15 @@ export default function AttachmentPage() {
   return (
     <MainLayout>
       {/* Hero section */}
-      <div className="bg-gradient-to-b from-wairua-light/30 to-white pt-16 pb-8">
+      <div className="bg-gradient-to-b from-wairua-light/30 to-white pt-20 pb-12">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-montserrat font-light mb-6 text-gray-800 leading-tight">
-              Attachment <span className="text-wairua-dark">Theory</span>
+            <h1 className="text-5xl md:text-6xl font-montserrat font-light mb-8 text-gray-800 leading-tight">
+              The <span className="text-wairua-dark">Patterns</span> of Connection
             </h1>
             
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Explore how our early relationships shape lifelong patterns of connection. Like whirlpools in a river, our attachment styles influence how we interact with others.
+            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+              Discover how your earliest relationships shape the way you connect with others today. Like the gentle currents of a river, attachment patterns flow through every interaction.
             </p>
           </div>
         </div>
@@ -30,78 +30,146 @@ export default function AttachmentPage() {
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="mb-10 text-center">
-              <h2 className="text-3xl font-montserrat font-light text-gray-800 mb-4">
-                Understanding Attachment Patterns
+            <div className="mb-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-montserrat font-light text-gray-800 mb-6">
+                The Foundation of Human Connection
               </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Attachment theory, developed by John Bowlby and Mary Ainsworth, describes how early relationships with caregivers shape our emotional connections throughout life.
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Our earliest experiences of connection shape how we relate to others throughout our lives. These patterns, formed through our interactions, continue to influence our relationships in subtle and meaningful ways.
               </p>
             </div>
             
-            <div className="bg-gray-50 p-6 rounded-lg mb-16">
-              <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-xl shadow-sm mb-20">
+              <div className="grid md:grid-cols-2 gap-12">
                 <div>
-                  <h4 className="font-medium text-wairua-dark mb-2">Attachment as a Survival System</h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Attachment is a powerful emotional bond that connects a child to their caregiver, ensuring protection and survival. It's a critical evolutionary adaptation that shapes our:
+                  <h4 className="text-xl font-medium text-wairua-dark mb-4">Our First Language of Love</h4>
+                  <p className="text-base text-gray-600 mb-6 leading-relaxed">
+                    Connection is our first language, a powerful bond that shapes our emotional landscape. Through this bond, we learn:
                   </p>
-                  <ul className="text-xs text-gray-600 space-y-1 list-disc pl-4">
-                    <li><span className="font-medium">Emotional regulation</span> - Learning to manage feelings through co-regulation</li>
-                    <li><span className="font-medium">Sense of safety</span> - Developing confidence to explore the world</li>
-                    <li><span className="font-medium">Interpersonal templates</span> - Building internal models of relationships</li>
-                    <li><span className="font-medium">Perception of self</span> - Forming a sense of self-worth and efficacy</li>
+                  <ul className="space-y-4 text-gray-600">
+                    <li className="flex items-start">
+                      <span className="text-wairua-dark mr-3">•</span>
+                      <div>
+                        <span className="font-medium">Emotional Safety</span>
+                        <p className="text-sm mt-1">Learning to trust in the presence of others</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-wairua-dark mr-3">•</span>
+                      <div>
+                        <span className="font-medium">Self-Regulation</span>
+                        <p className="text-sm mt-1">Managing emotions through connection</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-wairua-dark mr-3">•</span>
+                      <div>
+                        <span className="font-medium">Relational Maps</span>
+                        <p className="text-sm mt-1">Understanding how relationships work</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-wairua-dark mr-3">•</span>
+                      <div>
+                        <span className="font-medium">Self-Worth</span>
+                        <p className="text-sm mt-1">Knowing our value in relationships</p>
+                      </div>
+                    </li>
                   </ul>
                 </div>
                 
                 <div>
-                  <h4 className="font-medium text-wairua-dark mb-2">Internal Working Models</h4>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Early attachment experiences create mental representations or "maps" that guide how we:
+                  <h4 className="text-xl font-medium text-wairua-dark mb-4">The Blueprint of Connection</h4>
+                  <p className="text-base text-gray-600 mb-6 leading-relaxed">
+                    Our early experiences create internal maps that guide how we navigate relationships:
                   </p>
-                  <ul className="text-xs text-gray-600 space-y-1 list-disc pl-4">
-                    <li><span className="font-medium">View ourselves</span> - As worthy of care or undeserving</li>
-                    <li><span className="font-medium">Perceive others</span> - As reliable or unreliable</li>
-                    <li><span className="font-medium">Process emotions</span> - By expressing, suppressing, or becoming overwhelmed</li>
-                    <li><span className="font-medium">Approach relationships</span> - With trust, anxiety, avoidance, or fear</li>
+                  <ul className="space-y-4 text-gray-600">
+                    <li className="flex items-start">
+                      <span className="text-wairua-dark mr-3">•</span>
+                      <div>
+                        <span className="font-medium">Self-Image</span>
+                        <p className="text-sm mt-1">How we see ourselves in relationships</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-wairua-dark mr-3">•</span>
+                      <div>
+                        <span className="font-medium">Trust Patterns</span>
+                        <p className="text-sm mt-1">Our expectations of others</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-wairua-dark mr-3">•</span>
+                      <div>
+                        <span className="font-medium">Emotional Expression</span>
+                        <p className="text-sm mt-1">How we share our feelings</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-wairua-dark mr-3">•</span>
+                      <div>
+                        <span className="font-medium">Connection Style</span>
+                        <p className="text-sm mt-1">Our approach to relationships</p>
+                      </div>
+                    </li>
                   </ul>
-                  <p className="text-xs text-gray-600 mt-3">
-                    These working models, like the deeper currents in our whirlpools, often operate outside of conscious awareness but powerfully influence our connections.
+                  <p className="text-sm text-gray-600 mt-6 italic">
+                    These patterns, like the currents beneath the surface, shape our relationships in ways we often don't notice.
                   </p>
                 </div>
               </div>
             </div>
             
             {/* Secure Attachment Section */}
-            <div className="mb-16">
-              <div className="mb-8">
-                <h2 className="text-2xl font-montserrat font-light text-gray-800 mb-3">
-                  Secure Attachment
+            <div className="mb-24">
+              <div className="mb-12">
+                <h2 className="text-3xl font-montserrat font-light text-gray-800 mb-4">
+                  Secure Attachment: The Foundation of Trust
                 </h2>
-                <div className="w-20 h-1 bg-wairua-dark rounded mb-4"></div>
-                <p className="text-gray-600">
-                  When caregivers consistently respond with sensitivity and warmth, children develop a secure attachment style.
+                <div className="w-24 h-1 bg-wairua-dark rounded mb-6"></div>
+                <p className="text-xl text-gray-600">
+                  A foundation of trust and safety that supports growth and exploration.
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
                 {/* Visualization */}
-                <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <AttachmentInteraction scenarioId="secure-parent-child" />
+                <div className="bg-white p-6 rounded-xl shadow-sm">
+                  <AttachmentInteraction scenarioId="secure-connection" />
                 </div>
                 
                 {/* Description */}
                 <div className="flex flex-col justify-center">
-                  <h3 className="text-xl font-medium text-wairua-dark mb-4">Characteristics of Secure Attachment</h3>
-                  <div className="space-y-3">
-                    <p className="text-sm text-gray-600">
-                      In secure attachment, caregivers provide a <span className="font-medium">secure base</span> from which children can explore the world, and a <span className="font-medium">safe haven</span> to return to when threatened or distressed.
+                  <h3 className="text-2xl font-medium text-wairua-dark mb-6">The Dance of Security</h3>
+                  <div className="space-y-6">
+                    <p className="text-base text-gray-600 leading-relaxed">
+                      In secure connection, one presence creates a <span className="font-medium text-wairua-dark">safe haven</span> for emotional comfort and a <span className="font-medium text-wairua-dark">secure base</span> for exploration. This balance allows for:
                     </p>
-                    <p className="text-sm text-gray-600">
-                      Securely attached individuals tend to have balanced emotional expression, trust in relationships, resilience during stress, and comfort with both intimacy and autonomy.
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      Like harmonious whirlpools, secure individuals maintain their core while flowing easily in and out of connection with others.
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start">
+                        <span className="text-wairua-dark mr-3">•</span>
+                        <div>
+                          <span className="font-medium">Free Expression</span>
+                          <p className="text-sm mt-1">Knowing feelings are welcome and understood</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-wairua-dark mr-3">•</span>
+                        <div>
+                          <span className="font-medium">Trust in Connection</span>
+                          <p className="text-sm mt-1">Believing in the reliability of others</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-wairua-dark mr-3">•</span>
+                        <div>
+                          <span className="font-medium">Balanced Relating</span>
+                          <p className="text-sm mt-1">Finding harmony between closeness and independence</p>
+                        </div>
+                      </li>
+                    </ul>
+                    <p className="text-base text-gray-600 leading-relaxed">
+                      Like a gentle whirlpool, secure connection maintains its center while flowing naturally with others.
                     </p>
                   </div>
                 </div>
@@ -109,71 +177,111 @@ export default function AttachmentPage() {
             </div>
             
             {/* Anxious Attachment Section */}
-            <div className="mb-16">
-              <div className="mb-8">
-                <h2 className="text-2xl font-montserrat font-light text-gray-800 mb-3">
-                  Anxious/Preoccupied Attachment
+            <div className="mb-24">
+              <div className="mb-12">
+                <h2 className="text-3xl font-montserrat font-light text-gray-800 mb-4">
+                  Anxious Attachment: The Search for Reassurance
                 </h2>
-                <div className="w-20 h-1 bg-wairua-dark rounded mb-4"></div>
-                <p className="text-gray-600">
-                  When caregiving is inconsistent or unpredictable, children may develop an anxious attachment style.
+                <div className="w-24 h-1 bg-wairua-dark rounded mb-6"></div>
+                <p className="text-xl text-gray-600">
+                  A pattern of seeking connection while fearing its loss.
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
                 {/* Description */}
                 <div className="flex flex-col justify-center">
-                  <h3 className="text-xl font-medium text-wairua-dark mb-4">Characteristics of Anxious Attachment</h3>
-                  <div className="space-y-3">
-                    <p className="text-sm text-gray-600">
-                      Anxiously attached individuals often experience heightened emotional reactivity, fear of abandonment, and a strong desire for closeness that can sometimes overwhelm others.
+                  <h3 className="text-2xl font-medium text-wairua-dark mb-6">The Search for Reassurance</h3>
+                  <div className="space-y-6">
+                    <p className="text-base text-gray-600 leading-relaxed">
+                      When responses are inconsistent, one may develop a heightened awareness of connection, seeking reassurance through intensified emotional signals.
                     </p>
-                    <p className="text-sm text-gray-600">
-                      They may be hypervigilant to signs of rejection, show excessive reassurance-seeking, and experience intense distress when separated from loved ones.
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      As whirlpools, they may extend far beyond their center with rapid, turbulent energy, constantly seeking connection but sometimes destabilizing themselves in the process.
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start">
+                        <span className="text-wairua-dark mr-3">•</span>
+                        <div>
+                          <span className="font-medium">Emotional Intensity</span>
+                          <p className="text-sm mt-1">Strong feelings that seek validation</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-wairua-dark mr-3">•</span>
+                        <div>
+                          <span className="font-medium">Connection Seeking</span>
+                          <p className="text-sm mt-1">A deep need for closeness and reassurance</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-wairua-dark mr-3">•</span>
+                        <div>
+                          <span className="font-medium">Fear of Loss</span>
+                          <p className="text-sm mt-1">Worry about abandonment or rejection</p>
+                        </div>
+                      </li>
+                    </ul>
+                    <p className="text-base text-gray-600 leading-relaxed">
+                      Like a whirlpool reaching outward, this pattern extends its energy in search of connection, sometimes losing its center in the process.
                     </p>
                   </div>
                 </div>
                 
                 {/* Visualization */}
-                <div className="bg-white p-4 rounded-lg shadow-sm">
+                <div className="bg-white p-6 rounded-xl shadow-sm">
                   <AttachmentInteraction scenarioId="anxious-attachment" />
                 </div>
               </div>
             </div>
             
             {/* Avoidant Attachment Section */}
-            <div className="mb-16">
-              <div className="mb-8">
-                <h2 className="text-2xl font-montserrat font-light text-gray-800 mb-3">
-                  Avoidant/Dismissive Attachment
+            <div className="mb-24">
+              <div className="mb-12">
+                <h2 className="text-3xl font-montserrat font-light text-gray-800 mb-4">
+                  Avoidant Attachment: The Protection of Distance
                 </h2>
-                <div className="w-20 h-1 bg-wairua-dark rounded mb-4"></div>
-                <p className="text-gray-600">
-                  When caregivers are consistently emotionally unavailable or rejecting, children often develop an avoidant attachment style.
+                <div className="w-24 h-1 bg-wairua-dark rounded mb-6"></div>
+                <p className="text-xl text-gray-600">
+                  A pattern of maintaining distance while longing for connection.
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
                 {/* Visualization */}
-                <div className="bg-white p-4 rounded-lg shadow-sm">
+                <div className="bg-white p-6 rounded-xl shadow-sm">
                   <AttachmentInteraction scenarioId="avoidant-attachment" />
                 </div>
                 
                 {/* Description */}
                 <div className="flex flex-col justify-center">
-                  <h3 className="text-xl font-medium text-wairua-dark mb-4">Characteristics of Avoidant Attachment</h3>
-                  <div className="space-y-3">
-                    <p className="text-sm text-gray-600">
-                      Avoidantly attached individuals often appear self-sufficient and emotionally independent, valuing autonomy over connection. They may minimize emotional expression and maintain emotional distance in relationships.
+                  <h3 className="text-2xl font-medium text-wairua-dark mb-6">The Protection of Distance</h3>
+                  <div className="space-y-6">
+                    <p className="text-base text-gray-600 leading-relaxed">
+                      When emotional needs aren't consistently met, one may learn to maintain distance and develop self-reliance as a protective strategy.
                     </p>
-                    <p className="text-sm text-gray-600">
-                      They typically show discomfort with intimacy, difficulty asking for help, and a tendency to withdraw during conflict or emotional situations.
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      As whirlpools, they maintain tight boundaries with minimal energy extending outward, focused primarily on their core but potentially missing the nourishment of deeper connection.
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start">
+                        <span className="text-wairua-dark mr-3">•</span>
+                        <div>
+                          <span className="font-medium">Emotional Independence</span>
+                          <p className="text-sm mt-1">Valuing self-sufficiency over connection</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-wairua-dark mr-3">•</span>
+                        <div>
+                          <span className="font-medium">Distance Management</span>
+                          <p className="text-sm mt-1">Maintaining emotional boundaries</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-wairua-dark mr-3">•</span>
+                        <div>
+                          <span className="font-medium">Intimacy Avoidance</span>
+                          <p className="text-sm mt-1">Difficulty with emotional closeness</p>
+                        </div>
+                      </li>
+                    </ul>
+                    <p className="text-base text-gray-600 leading-relaxed">
+                      Like a contained whirlpool, this pattern maintains strong boundaries but may miss the nourishment of deeper connection.
                     </p>
                   </div>
                 </div>
@@ -181,77 +289,118 @@ export default function AttachmentPage() {
             </div>
             
             {/* Disorganized Attachment Section */}
-            <div className="mb-16">
-              <div className="mb-8">
-                <h2 className="text-2xl font-montserrat font-light text-gray-800 mb-3">
-                  Disorganized/Fearful Attachment
+            <div className="mb-24">
+              <div className="mb-12">
+                <h2 className="text-3xl font-montserrat font-light text-gray-800 mb-4">
+                  Disorganized Attachment: The Conflict of Connection
                 </h2>
-                <div className="w-20 h-1 bg-wairua-dark rounded mb-4"></div>
-                <p className="text-gray-600">
-                  When caregivers are frightening or frightened themselves, children may develop a disorganized attachment style.
+                <div className="w-24 h-1 bg-wairua-dark rounded mb-6"></div>
+                <p className="text-xl text-gray-600">
+                  A pattern of seeking and fearing connection simultaneously.
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
                 {/* Description */}
                 <div className="flex flex-col justify-center">
-                  <h3 className="text-xl font-medium text-wairua-dark mb-4">Characteristics of Disorganized Attachment</h3>
-                  <div className="space-y-3">
-                    <p className="text-sm text-gray-600">
-                      Disorganized attachment often develops in response to trauma, abuse, or caregivers who themselves are struggling with unresolved trauma or loss.
+                  <h3 className="text-2xl font-medium text-wairua-dark mb-6">The Conflict of Connection</h3>
+                  <div className="space-y-6">
+                    <p className="text-base text-gray-600 leading-relaxed">
+                      When connection feels both needed and frightening, it creates conflicting impulses to approach and withdraw.
                     </p>
-                    <p className="text-sm text-gray-600">
-                      These individuals may experience conflicting impulses to both approach and avoid connection, leading to unpredictable relationship patterns, difficulties regulating emotions, and confusion about identity.
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      As whirlpools, they may show erratic energy patterns – sometimes surging toward connection, sometimes retreating, with unstable boundaries and chaotic interactions.
+                    <ul className="space-y-4 text-gray-600">
+                      <li className="flex items-start">
+                        <span className="text-wairua-dark mr-3">•</span>
+                        <div>
+                          <span className="font-medium">Mixed Signals</span>
+                          <p className="text-sm mt-1">Conflicting desires for closeness and distance</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-wairua-dark mr-3">•</span>
+                        <div>
+                          <span className="font-medium">Emotional Chaos</span>
+                          <p className="text-sm mt-1">Difficulty regulating intense feelings</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-wairua-dark mr-3">•</span>
+                        <div>
+                          <span className="font-medium">Identity Confusion</span>
+                          <p className="text-sm mt-1">Uncertainty about self and relationships</p>
+                        </div>
+                      </li>
+                    </ul>
+                    <p className="text-base text-gray-600 leading-relaxed">
+                      Like a turbulent whirlpool, this pattern shows unpredictable patterns of connection and withdrawal.
                     </p>
                   </div>
                 </div>
                 
                 {/* Visualization */}
-                <div className="bg-white p-4 rounded-lg shadow-sm">
+                <div className="bg-white p-6 rounded-xl shadow-sm">
                   <AttachmentInteraction scenarioId="disorganized-attachment" />
                 </div>
               </div>
             </div>
             
-            {/* Healing Attachment Wounds */}
-            <div>
-              <div className="mb-8">
-                <h2 className="text-2xl font-montserrat font-light text-gray-800 mb-3">
-                  Healing Attachment Wounds
+            {/* Growing Through Connection Section */}
+            <div className="mb-24">
+              <div className="mb-12">
+                <h2 className="text-3xl font-montserrat font-light text-gray-800 mb-4">
+                  Growing Through Connection: The Journey of Understanding
                 </h2>
-                <div className="w-20 h-1 bg-wairua-dark rounded mb-4"></div>
-                <p className="text-gray-600">
-                  While early attachment patterns influence our relationships, they can be healed and transformed through conscious awareness and new experiences of secure connection.
+                <div className="w-24 h-1 bg-wairua-dark rounded mb-6"></div>
+                <p className="text-xl text-gray-600">
+                  Understanding our patterns is the first step toward growth and change.
                 </p>
               </div>
               
-              <div className="bg-white p-4 rounded-lg shadow-sm mb-8">
+              <div className="bg-white p-8 rounded-xl shadow-sm mb-12">
                 <AttachmentInteraction scenarioId="healing-attachment" />
               </div>
               
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="font-medium text-wairua-dark mb-2">Earned Security</h3>
-                  <p className="text-sm text-gray-600">
-                    Through reflection, therapy, and healing relationships, individuals can develop "earned secure attachment" – moving toward security despite insecure beginnings.
+              <div className="grid md:grid-cols-3 gap-8 mb-12">
+                <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl shadow-sm">
+                  <h3 className="text-xl font-medium text-wairua-dark mb-4">Earned Security</h3>
+                  <p className="text-base text-gray-600 leading-relaxed">
+                    Through awareness and supportive relationships, we can develop new patterns of connection, regardless of earlier experiences.
                   </p>
                 </div>
                 
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="font-medium text-wairua-dark mb-2">Secure Relationships</h3>
-                  <p className="text-sm text-gray-600">
-                    Relationships with partners, friends, therapists, and mentors who provide consistent, attuned responses can help reshape attachment patterns over time.
+                <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl shadow-sm">
+                  <h3 className="text-xl font-medium text-wairua-dark mb-4">Healing Connections</h3>
+                  <p className="text-base text-gray-600 leading-relaxed">
+                    Relationships with understanding others can help reshape our patterns of connection over time.
                   </p>
                 </div>
                 
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="font-medium text-wairua-dark mb-2">Self-Compassion</h3>
-                  <p className="text-sm text-gray-600">
-                    Learning to respond to our own needs with kindness and understanding can help develop a secure internal base that isn't dependent on others.
+                <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl shadow-sm">
+                  <h3 className="text-xl font-medium text-wairua-dark mb-4">Self-Compassion</h3>
+                  <p className="text-base text-gray-600 leading-relaxed">
+                    Learning to respond to our own needs with kindness creates a secure internal foundation.
                   </p>
+                </div>
+              </div>
+
+              {/* Assessment Call to Action */}
+              <div className="text-center">
+                <h3 className="text-2xl font-montserrat font-light text-gray-800 mb-6">
+                  Ready to Explore Your Patterns?
+                </h3>
+                <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                  Take a gentle journey of self-discovery to understand your own patterns of connection.
+                </p>
+                <div className="text-center mt-12">
+                  <a 
+                    href="/assessment" 
+                    className="inline-flex items-center px-8 py-4 bg-wairua-dark text-white rounded-full text-lg font-medium hover:bg-wairua-dark/90 transition-colors duration-200 shadow-lg hover:shadow-xl"
+                  >
+                    Begin Your Journey
+                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
@@ -263,34 +412,47 @@ export default function AttachmentPage() {
       <WaveDivider color="#f9fafb" inverted={true} />
       
       {/* Call to Action */}
-      <div className="py-16 bg-gray-50 text-center">
+      <div className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-montserrat font-light text-gray-800 mb-6">
-              Reflect on Your Attachment Style
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-montserrat font-light text-gray-800 mb-8 text-center">
+              Begin Your Journey of Understanding
             </h2>
-            <p className="text-gray-600 mb-8">
-              Understanding your attachment style can help you navigate relationships more effectively.
+            <p className="text-xl text-gray-600 mb-12 text-center">
+              Take a moment to reflect on your own patterns of connection.
             </p>
-            <div className="space-y-4 text-left max-w-lg mx-auto">
-              <div className="bg-white p-4 rounded-md shadow-sm">
-                <h3 className="font-medium text-wairua-dark">1. Notice Patterns in Relationships</h3>
-                <p className="text-sm text-gray-600">
-                  "How do I typically respond when I feel distressed? Do I reach out, withdraw, or feel confused about what I need?"
+            <div className="space-y-6">
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <h3 className="text-xl font-medium text-wairua-dark mb-4">Notice Your Patterns</h3>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  "When you feel distressed, do you find yourself reaching out to others, withdrawing, or feeling uncertain about what you need? How do these patterns show up in your relationships?"
                 </p>
               </div>
-              <div className="bg-white p-4 rounded-md shadow-sm">
-                <h3 className="font-medium text-wairua-dark">2. Observe Your Comfort with Closeness and Distance</h3>
-                <p className="text-sm text-gray-600">
-                  "Do I feel uncomfortable when others get too close? Or do I worry they won't be available when I need them?"
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <h3 className="text-xl font-medium text-wairua-dark mb-4">Explore Your Comfort Zone</h3>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  "What happens when others get too close or when you worry they might not be available? How do you manage these moments of connection and distance?"
                 </p>
               </div>
-              <div className="bg-white p-4 rounded-md shadow-sm">
-                <h3 className="font-medium text-wairua-dark">3. Practice Secure Behaviors</h3>
-                <p className="text-sm text-gray-600">
-                  "How might I respond to myself and others with more consistency, attunement, and compassion?"
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <h3 className="text-xl font-medium text-wairua-dark mb-4">Choose Growth</h3>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  "How might understanding your patterns help you respond to yourself and others with more compassion and clarity? What would it feel like to explore this further?"
                 </p>
               </div>
+            </div>
+
+            {/* Assessment Call to Action */}
+            <div className="text-center mt-12">
+              <a 
+                href="/assessment" 
+                className="inline-flex items-center px-8 py-4 bg-wairua-dark text-white rounded-full text-lg font-medium hover:bg-wairua-dark/90 transition-colors duration-200 shadow-lg hover:shadow-xl"
+              >
+                Begin Your Journey
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>

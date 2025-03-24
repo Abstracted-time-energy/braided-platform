@@ -1,62 +1,238 @@
 {
-    "title": "Whirlpool Assessment",
-    "description": "This brief assessment will help you map your current whirlpool state across all layers of wellbeing.",
-    "instructions": "For each statement, indicate how true it is for you on a scale from 1 (Not at all true) to 5 (Very true).",
-    "questions": [
-      {
-        "id": "wairua_1",
-        "layer": "wairua",
-        "text": "I have a clear sense of meaning and purpose in my life",
-        "type": "scale"
-      },
-      {
-        "id": "wairua_2",
-        "layer": "wairua",
-        "text": "I feel connected to something larger than myself",
-        "type": "scale"
-      },
-      {
-        "id": "wairua_3",
-        "layer": "wairua",
-        "text": "I live according to my core values",
-        "type": "scale"
-      },
-      {
-        "id": "mauri_1",
-        "layer": "mauri",
-        "text": "I have sufficient energy for the activities that matter to me",
-        "type": "scale"
-      },
-      {
-        "id": "mauri_2",
-        "layer": "mauri",
-        "text": "I engage in activities that energize and revitalize me",
-        "type": "scale"
-      },
-      {
-        "id": "mauri_3",
-        "layer": "mauri",
-        "text": "I can identify what drains my energy and manage it effectively",
-        "type": "scale"
-      },
-      {
-        "id": "mind_1",
-        "layer": "mind",
-        "text": "I can recognize and work with difficult thoughts and emotions",
-        "type": "scale"
-      },
-      {
-        "id": "mind_2",
-        "layer": "mind",
-        "text": "I have a generally positive relationship with myself",
-        "type": "scale"
-      },
-      {
-        "id": "mind_3",
-        "layer": "mind",
-        "text": "I can adapt my thinking when faced with new situations",
-        "type": "scale"
-      }
-    ]
-  }
-  
+  "title": "Whirlpool Assessment",
+  "description": "This assessment will help you map your current whirlpool state across all layers of wellbeing.",
+  "instructions": "For each statement, indicate how true it is for you on a scale from 1 (Not at all true) to 5 (Very true).",
+  "sections": [
+    {
+      "id": "wairua",
+      "title": "Spiritual Connection",
+      "description": "Your connection to meaning, purpose, and something larger than yourself."
+    },
+    {
+      "id": "mauri",
+      "title": "Energy Flow",
+      "description": "Your vital life force and how it's maintained and expressed."
+    },
+    {
+      "id": "biological",
+      "title": "Biological Foundations",
+      "description": "The fundamental physical practices that support your whirlpool's energy flow."
+    },
+    {
+      "id": "mind",
+      "title": "Mental Landscape",
+      "description": "Your thought patterns, self-relationship, and cognitive flexibility."
+    },
+    {
+      "id": "reflective",
+      "title": "Reflective Functioning",
+      "description": "Your ability to understand your own and others' mental states, emotions, and behaviors."
+    },
+    {
+      "id": "attachment",
+      "title": "Relationship Patterns",
+      "description": "Your patterns of connection, communication, and security in close relationships."
+    }
+  ],
+  "questions": [
+    {
+      "id": "wairua_1",
+      "section": "wairua",
+      "layer": "wairua",
+      "text": "I have a clear sense of meaning and purpose in my life",
+      "type": "scale"
+    },
+    {
+      "id": "wairua_2",
+      "section": "wairua",
+      "layer": "wairua",
+      "text": "I feel connected to something larger than myself",
+      "type": "scale"
+    },
+    {
+      "id": "wairua_3",
+      "section": "wairua",
+      "layer": "wairua",
+      "text": "I live according to my core values",
+      "type": "scale"
+    },
+    {
+      "id": "mauri_1",
+      "section": "mauri",
+      "layer": "mauri",
+      "text": "I have sufficient energy for the activities that matter to me",
+      "type": "scale"
+    },
+    {
+      "id": "mauri_2",
+      "section": "mauri",
+      "layer": "mauri",
+      "text": "I engage in activities that energize and revitalize me",
+      "type": "scale"
+    },
+    {
+      "id": "mauri_3",
+      "section": "mauri",
+      "layer": "mauri",
+      "text": "I can identify what drains my energy and manage it effectively",
+      "type": "scale"
+    },
+    {
+      "id": "movement_1",
+      "section": "biological",
+      "subsection": "movement",
+      "layer": "body",
+      "text": "I engage in intentional physical activity (exercise, walking, movement practices) for at least 30 minutes most days",
+      "type": "scale"
+    },
+    {
+      "id": "movement_2",
+      "section": "biological",
+      "subsection": "movement",
+      "layer": "body",
+      "text": "I incorporate different types of movement in my routine (strength, cardiovascular, flexibility)",
+      "type": "scale"
+    },
+    {
+      "id": "movement_3",
+      "section": "biological",
+      "subsection": "movement",
+      "layer": "body",
+      "text": "I genuinely enjoy the forms of movement I engage in rather than viewing them as obligations",
+      "type": "scale"
+    },
+    {
+      "id": "nutrition_1",
+      "section": "biological",
+      "subsection": "nutrition",
+      "layer": "body",
+      "text": "I eat a variety of whole, unprocessed foods (vegetables, fruits, proteins, healthy fats) most days",
+      "type": "scale"
+    },
+    {
+      "id": "nutrition_2",
+      "section": "biological",
+      "subsection": "nutrition",
+      "layer": "body",
+      "text": "I have a positive relationship with food, eating mindfully and without guilt",
+      "type": "scale"
+    },
+    {
+      "id": "nutrition_3",
+      "section": "biological",
+      "subsection": "nutrition",
+      "layer": "body",
+      "text": "I notice how different foods affect my energy, mood, and mental clarity",
+      "type": "scale"
+    },
+    {
+      "id": "sleep_1",
+      "section": "biological",
+      "subsection": "restoration",
+      "layer": "body",
+      "text": "I consistently get 7-9 hours of quality sleep most nights",
+      "type": "scale"
+    },
+    {
+      "id": "sleep_2",
+      "section": "biological",
+      "subsection": "restoration",
+      "layer": "body",
+      "text": "I maintain regular sleep and wake times that align with my natural rhythms",
+      "type": "scale"
+    },
+    {
+      "id": "sleep_3",
+      "section": "biological",
+      "subsection": "restoration",
+      "layer": "body",
+      "text": "I have effective practices for rest and recovery when feeling depleted (beyond sleep)",
+      "type": "scale"
+    },
+    {
+      "id": "bio_integration_1",
+      "section": "biological",
+      "subsection": "integration",
+      "layer": "body",
+      "text": "I recognize the connection between my physical practices and my emotional wellbeing",
+      "type": "scale"
+    },
+    {
+      "id": "mind_1",
+      "section": "mind",
+      "layer": "mind",
+      "text": "I can recognize and work with difficult thoughts and emotions",
+      "type": "scale"
+    },
+    {
+      "id": "mind_2",
+      "section": "mind",
+      "layer": "mind",
+      "text": "I have a generally positive relationship with myself",
+      "type": "scale"
+    },
+    {
+      "id": "mind_3",
+      "section": "mind",
+      "layer": "mind",
+      "text": "I can adapt my thinking when faced with new situations",
+      "type": "scale"
+    },
+    {
+      "id": "reflective_1",
+      "section": "reflective",
+      "layer": "social",
+      "text": "I can identify and name my emotions as they arise",
+      "type": "scale"
+    },
+    {
+      "id": "reflective_2",
+      "section": "reflective",
+      "layer": "social",
+      "text": "I understand how my thoughts and feelings influence my behavior",
+      "type": "scale"
+    },
+    {
+      "id": "reflective_3",
+      "section": "reflective",
+      "layer": "social",
+      "text": "I can recognize when others' perspectives differ from my own",
+      "type": "scale"
+    },
+    {
+      "id": "reflective_4",
+      "section": "reflective",
+      "layer": "social",
+      "text": "I'm able to consider what might be happening in another person's mind",
+      "type": "scale"
+    },
+    {
+      "id": "attachment_1",
+      "section": "attachment",
+      "layer": "social",
+      "text": "I find it relatively easy to get close to others",
+      "type": "scale"
+    },
+    {
+      "id": "attachment_2",
+      "section": "attachment",
+      "layer": "social",
+      "text": "I can communicate my needs clearly in close relationships",
+      "type": "scale"
+    },
+    {
+      "id": "attachment_3",
+      "section": "attachment",
+      "layer": "social",
+      "text": "I trust that important people in my life will be there when I need them",
+      "type": "scale"
+    },
+    {
+      "id": "attachment_4",
+      "section": "attachment",
+      "layer": "social",
+      "text": "I can maintain a sense of self-worth even during relationship difficulties",
+      "type": "scale"
+    }
+  ]
+}

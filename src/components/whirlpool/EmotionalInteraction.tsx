@@ -216,63 +216,69 @@ export default function EmotionalInteraction({ scenarioId = "mutual-care" }: Emo
           {/* Interaction particles/energy */}
           <div className="absolute inset-0 flex items-center justify-center">
             {/* Generate different particles based on flow direction */}
-            {Array.from({ length: 5 }).map((_, i) => (
-              <React.Fragment key={i}>
-                {/* Left to right particles */}
-                {(flowDirection === "leftToRight" || flowDirection === "bidirectional" || flowDirection === "chaotic") && (
-                  <motion.div
-                    className="absolute rounded-full"
-                    style={{ 
-                      backgroundColor: emotion1.color,
-                      width: 6 + Math.random() * 6,
-                      height: 6 + Math.random() * 6
-                    }}
-                    initial={{ 
-                      x: -100 - (i * 20), 
-                      y: (Math.random() * 60) - 30,
-                      opacity: 0.8
-                    }}
-                    animate={{ 
-                      x: 100 + (i * 20),
-                      opacity: flowDirection === "chaotic" ? [0.8, 0.4, 0.9, 0.5] : [0.8, 0.6, 0.8]
-                    }}
-                    transition={{
-                      duration: 3 + (Math.random() * 2),
-                      repeat: Infinity,
-                      ease: flowDirection === "chaotic" ? "easeInOut" : "linear",
-                      delay: i * 0.4
-                    }}
-                  />
-                )}
-                
-                {/* Right to left particles */}
-                {(flowDirection === "rightToLeft" || flowDirection === "bidirectional" || flowDirection === "chaotic") && (
-                  <motion.div
-                    className="absolute rounded-full"
-                    style={{ 
-                      backgroundColor: emotion2.color,
-                      width: 6 + Math.random() * 6,
-                      height: 6 + Math.random() * 6
-                    }}
-                    initial={{ 
-                      x: 100 + (i * 20), 
-                      y: (Math.random() * 60) - 30,
-                      opacity: 0.8
-                    }}
-                    animate={{ 
-                      x: -100 - (i * 20),
-                      opacity: flowDirection === "chaotic" ? [0.8, 0.3, 0.7, 0.5] : [0.8, 0.6, 0.8]
-                    }}
-                    transition={{
-                      duration: 3 + (Math.random() * 2),
-                      repeat: Infinity,
-                      ease: flowDirection === "chaotic" ? "easeInOut" : "linear",
-                      delay: i * 0.3 + 0.5
-                    }}
-                  />
-                )}
-              </React.Fragment>
-            ))}
+            {Array.from({ length: 5 }).map((_, i) => {
+              // Use deterministic values based on index
+              const size = 8 + (i % 3); // Alternates between 8, 9, and 10
+              const yOffset = (i * 15) - 30; // Evenly spaced vertical positions
+              
+              return (
+                <React.Fragment key={i}>
+                  {/* Left to right particles */}
+                  {(flowDirection === "leftToRight" || flowDirection === "bidirectional" || flowDirection === "chaotic") && (
+                    <motion.div
+                      className="absolute rounded-full"
+                      style={{ 
+                        backgroundColor: emotion1.color,
+                        width: size,
+                        height: size
+                      }}
+                      initial={{ 
+                        x: -100 - (i * 20), 
+                        y: yOffset,
+                        opacity: 0.8
+                      }}
+                      animate={{ 
+                        x: 100 + (i * 20),
+                        opacity: flowDirection === "chaotic" ? [0.8, 0.4, 0.9, 0.5] : [0.8, 0.6, 0.8]
+                      }}
+                      transition={{
+                        duration: 3 + (i * 0.5),
+                        repeat: Infinity,
+                        ease: flowDirection === "chaotic" ? "easeInOut" : "linear",
+                        delay: i * 0.4
+                      }}
+                    />
+                  )}
+                  
+                  {/* Right to left particles */}
+                  {(flowDirection === "rightToLeft" || flowDirection === "bidirectional" || flowDirection === "chaotic") && (
+                    <motion.div
+                      className="absolute rounded-full"
+                      style={{ 
+                        backgroundColor: emotion2.color,
+                        width: size,
+                        height: size
+                      }}
+                      initial={{ 
+                        x: 100 + (i * 20), 
+                        y: yOffset,
+                        opacity: 0.8
+                      }}
+                      animate={{ 
+                        x: -100 - (i * 20),
+                        opacity: flowDirection === "chaotic" ? [0.8, 0.3, 0.7, 0.5] : [0.8, 0.6, 0.8]
+                      }}
+                      transition={{
+                        duration: 3 + (i * 0.5),
+                        repeat: Infinity,
+                        ease: flowDirection === "chaotic" ? "easeInOut" : "linear",
+                        delay: i * 0.3 + 0.5
+                      }}
+                    />
+                  )}
+                </React.Fragment>
+              );
+            })}
           </div>
           
           {/* Interaction effect in the middle */}

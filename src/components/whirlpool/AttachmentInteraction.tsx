@@ -133,8 +133,8 @@ const AttachmentInteraction: React.FC<AttachmentInteractionProps> = ({ scenarioI
       ctx.fillStyle = '#4B5563';
       ctx.font = '14px sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText('Caregiver', parentX, parentY - 60);
-      ctx.fillText('Child', childX, childY - 60);
+      ctx.fillText(scenarioId === 'healing-attachment' ? 'Secure Presence' : 'Caregiver', parentX, parentY - 60);
+      ctx.fillText(scenarioId === 'healing-attachment' ? 'Growing Mind' : 'Child', childX, childY - 60);
       
       // Add attachment symbols
       ctx.font = '24px sans-serif';

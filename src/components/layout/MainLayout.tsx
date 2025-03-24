@@ -4,6 +4,7 @@ import React, { ReactNode, useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/Button';
+import Logo from '@/components/ui/Logo';
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -33,8 +34,8 @@ export default function MainLayout({ children }: MainLayoutProps) {
     <div className="min-h-screen flex flex-col">
       <header className="sticky top-0 bg-white z-10 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="font-bold text-xl text-wairua-dark flex items-center gap-2">
-            <span>Braided</span>
+          <Link href="/" className="flex items-center">
+            <Logo className="w-36 h-36" />
           </Link>
           
           {/* Desktop Navigation */}
@@ -43,8 +44,8 @@ export default function MainLayout({ children }: MainLayoutProps) {
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setLearnDropdownOpen(!learnDropdownOpen)}
-                className={`flex items-center gap-1 font-medium ${
-                  pathname?.startsWith('/learn') ? 'text-wairua-dark' : 'text-gray-600 hover:text-wairua-dark'
+                className={`nav-link flex items-center gap-1 ${
+                  pathname?.startsWith('/learn') ? 'text-[#2D3B4D]' : 'text-gray-600 hover:text-[#2D3B4D]'
                 }`}
               >
                 Learn
@@ -71,17 +72,17 @@ export default function MainLayout({ children }: MainLayoutProps) {
                   <div className="py-1">
                     <Link
                       href="/learn"
-                      className={`block px-4 py-2 text-sm ${
-                        pathname === '/learn' ? 'bg-gray-100 text-wairua-dark' : 'text-gray-700 hover:bg-gray-100'
+                      className={`block px-4 py-2 text-sm tracking-wide ${
+                        pathname === '/learn' ? 'bg-gray-100 text-[#2D3B4D]' : 'text-gray-600 hover:bg-gray-100 hover:text-[#2D3B4D]'
                       }`}
                       onClick={() => setLearnDropdownOpen(false)}
                     >
                       Overview
                     </Link>
                     <Link
-                      href="/learn/biological-foundation"
-                      className={`block px-4 py-2 text-sm ${
-                        pathname === '/learn/biological-foundation' ? 'bg-gray-100 text-wairua-dark' : 'text-gray-700 hover:bg-gray-100'
+                      href="/learn/biological-foundations"
+                      className={`block px-4 py-2 text-sm tracking-wide ${
+                        pathname === '/learn/biological-foundations' ? 'bg-gray-100 text-[#2D3B4D]' : 'text-gray-600 hover:bg-gray-100 hover:text-[#2D3B4D]'
                       }`}
                       onClick={() => setLearnDropdownOpen(false)}
                     >
@@ -89,8 +90,8 @@ export default function MainLayout({ children }: MainLayoutProps) {
                     </Link>
                     <Link
                       href="/learn/emotional-literacy"
-                      className={`block px-4 py-2 text-sm ${
-                        pathname === '/learn/emotional-literacy' ? 'bg-gray-100 text-wairua-dark' : 'text-gray-700 hover:bg-gray-100'
+                      className={`block px-4 py-2 text-sm tracking-wide ${
+                        pathname === '/learn/emotional-literacy' ? 'bg-gray-100 text-[#2D3B4D]' : 'text-gray-600 hover:bg-gray-100 hover:text-[#2D3B4D]'
                       }`}
                       onClick={() => setLearnDropdownOpen(false)}
                     >
@@ -98,8 +99,8 @@ export default function MainLayout({ children }: MainLayoutProps) {
                     </Link>
                     <Link
                       href="/learn/attachment"
-                      className={`block px-4 py-2 text-sm ${
-                        pathname === '/learn/attachment' ? 'bg-gray-100 text-wairua-dark' : 'text-gray-700 hover:bg-gray-100'
+                      className={`block px-4 py-2 text-sm tracking-wide ${
+                        pathname === '/learn/attachment' ? 'bg-gray-100 text-[#2D3B4D]' : 'text-gray-600 hover:bg-gray-100 hover:text-[#2D3B4D]'
                       }`}
                       onClick={() => setLearnDropdownOpen(false)}
                     >
@@ -112,8 +113,8 @@ export default function MainLayout({ children }: MainLayoutProps) {
             
             <Link 
               href="/assessment" 
-              className={`font-medium ${
-                pathname?.startsWith('/assessment') ? 'text-wairua-dark' : 'text-gray-600 hover:text-wairua-dark'
+              className={`nav-link ${
+                pathname?.startsWith('/assessment') ? 'text-[#2D3B4D]' : 'text-gray-600 hover:text-[#2D3B4D]'
               }`}
             >
               Assessment
@@ -121,21 +122,39 @@ export default function MainLayout({ children }: MainLayoutProps) {
             
             <Link 
               href="/chat" 
-              className={`font-medium ${
-                pathname?.startsWith('/chat') ? 'text-wairua-dark' : 'text-gray-600 hover:text-wairua-dark'
+              className={`nav-link ${
+                pathname?.startsWith('/chat') ? 'text-[#2D3B4D]' : 'text-gray-600 hover:text-[#2D3B4D]'
               }`}
             >
               Chat
+            </Link>
+            
+            <Link 
+              href="/consult" 
+              className={`nav-link ${
+                pathname?.startsWith('/consult') ? 'text-[#2D3B4D]' : 'text-gray-600 hover:text-[#2D3B4D]'
+              }`}
+            >
+              Consult
+            </Link>
+
+            <Link 
+              href="/app" 
+              className={`nav-link ${
+                pathname?.startsWith('/app') ? 'text-[#2D3B4D]' : 'text-gray-600 hover:text-[#2D3B4D]'
+              }`}
+            >
+              App
             </Link>
           </nav>
           
           {/* Auth Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Link href="/login" className="font-medium text-gray-600 hover:text-wairua-dark">
+            <Link href="/login" className="nav-link text-gray-600 hover:text-[#2D3B4D]">
               Log in
             </Link>
             <Link href="/signup">
-              <Button size="sm">
+              <Button size="sm" className="button-text">
                 Sign Up
               </Button>
             </Link>
@@ -183,7 +202,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
                 Learn
               </Link>
               <Link 
-                href="/learn/biological-foundation"
+                href="/learn/biological-foundations"
                 className="font-medium text-gray-600 hover:text-wairua-dark pl-4 border-l-2 border-gray-200"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -216,6 +235,20 @@ export default function MainLayout({ children }: MainLayoutProps) {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Chat
+              </Link>
+              <Link 
+                href="/consult"
+                className="font-medium text-gray-600 hover:text-wairua-dark"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Consult
+              </Link>
+              <Link 
+                href="/app"
+                className="font-medium text-gray-600 hover:text-wairua-dark"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                App
               </Link>
               <div className="pt-2 flex flex-col space-y-2">
                 <Link 

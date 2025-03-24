@@ -38,7 +38,7 @@ export const attachmentStates: Record<AttachmentId, AttachmentState> = {
     color: "#8B5CF6", // Purple
     pulseRate: "medium",
     reach: "medium",
-    description: "Consistent, responsive caregiving that provides a secure base for exploration",
+    description: "A balanced presence that provides safety and support for growth",
     symbol: "❤️"
   },
   anxious: {
@@ -46,7 +46,7 @@ export const attachmentStates: Record<AttachmentId, AttachmentState> = {
     color: "#10B981", // Emerald
     pulseRate: "rapid",
     reach: "far",
-    description: "Amplified attachment behaviors seeking inconsistent responses from caregivers",
+    description: "A heightened awareness of connection, seeking consistent responses",
     symbol: "⚠️"
   },
   avoidant: {
@@ -54,7 +54,7 @@ export const attachmentStates: Record<AttachmentId, AttachmentState> = {
     color: "#6B7280", // Gray
     pulseRate: "slow",
     reach: "short",
-    description: "Suppressed attachment needs in response to emotionally unavailable caregiving",
+    description: "A protective stance that maintains emotional distance",
     symbol: "🔄"
   },
   disorganized: {
@@ -62,7 +62,7 @@ export const attachmentStates: Record<AttachmentId, AttachmentState> = {
     color: "#EF4444", // Red
     pulseRate: "erratic",
     reach: "variable",
-    description: "Conflicting approach/avoid patterns due to frightening or unpredictable caregiving",
+    description: "A complex pattern of seeking and fearing connection",
     symbol: "⚡"
   },
   healing: {
@@ -70,7 +70,7 @@ export const attachmentStates: Record<AttachmentId, AttachmentState> = {
     color: "#3B82F6", // Blue
     pulseRate: "medium",
     reach: "medium",
-    description: "Developing earned security through therapeutic relationships and self-understanding",
+    description: "A growing capacity for secure connection through understanding",
     symbol: "✨"
   }
 };
@@ -78,49 +78,49 @@ export const attachmentStates: Record<AttachmentId, AttachmentState> = {
 // Predefined attachment interaction scenarios
 export const attachmentScenarios: AttachmentScenario[] = [
   {
-    id: "secure-parent-child",
-    name: "Secure Attachment",
+    id: "secure-connection",
+    name: "Secure Connection",
     parent: "secure",
     child: "secure",
     pattern: "harmony",
-    description: "When a caregiver consistently responds with sensitivity and warmth, their child develops a secure attachment style. The child feels safe to explore while knowing they can return to their secure base.",
-    insight: "The caregiver's attunement to the child's needs creates a rhythmic dance of connection and exploration, allowing the child to develop confidence and trust."
+    description: "When one presence consistently offers warmth and understanding, it creates a foundation for growth and exploration. The other feels safe to explore while knowing they can return to this secure base.",
+    insight: "The attuned presence creates a rhythmic dance of connection and exploration, allowing for the development of trust and confidence."
   },
   {
     id: "anxious-attachment",
-    name: "Anxious/Preoccupied Attachment",
-    parent: "avoidant", // Emotionally inconsistent parent
+    name: "Anxious/Preoccupied Pattern",
+    parent: "avoidant",
     child: "anxious",
     pattern: "dissonant",
-    description: "When caregiving is inconsistent or unpredictable, children may develop an anxious attachment style with heightened emotional signals to maintain connection.",
-    insight: "The child's hypervigilance to potential abandonment leads to intensified emotional responses, as they never learn to trust that their needs will be consistently met."
+    description: "When responses are inconsistent, one may develop heightened awareness of connection, seeking reassurance through intensified emotional signals.",
+    insight: "The heightened awareness of potential disconnection leads to intensified emotional responses, as trust in consistent support remains uncertain."
   },
   {
     id: "avoidant-attachment",
-    name: "Avoidant/Dismissive Attachment",
+    name: "Avoidant/Dismissive Pattern",
     parent: "avoidant",
     child: "avoidant",
     pattern: "fearful",
-    description: "When caregivers are consistently emotionally unavailable, children learn to suppress their attachment needs and develop excessive self-reliance.",
-    insight: "The child learns that emotional needs won't be addressed, creating a pattern of emotional suppression that appears as independence but masks underlying vulnerability."
+    description: "When emotional needs aren't consistently met, one may learn to maintain distance and develop self-reliance as a protective strategy.",
+    insight: "The protective stance of emotional distance may appear as independence, while masking underlying needs for connection."
   },
   {
     id: "disorganized-attachment",
-    name: "Disorganized/Fearful Attachment",
+    name: "Disorganized/Fearful Pattern",
     parent: "disorganized",
     child: "disorganized",
     pattern: "destructive",
-    description: "When caregivers are frightening or frightened themselves, children develop conflicting impulses to both approach and avoid connection.",
-    insight: "The child faces an unresolvable dilemma: the person they need for safety is also a source of fear, creating chaotic, unpredictable patterns of connection."
+    description: "When connection feels both needed and frightening, it creates conflicting impulses to approach and withdraw.",
+    insight: "The presence of both longing and fear creates a complex dance of seeking and avoiding connection."
   },
   {
     id: "healing-attachment",
-    name: "Healing Attachment",
+    name: "Growing Through Connection",
     parent: "secure",
     child: "healing",
     pattern: "resonant",
-    description: "Through therapeutic relationships and self-understanding, individuals can develop 'earned security' despite insecure beginnings.",
-    insight: "Consistent attunement from a secure figure helps regulate emotional states and gradually reshape internal working models, allowing new patterns of connection to emerge."
+    description: "Through understanding and supportive relationships, one can develop new patterns of connection, regardless of earlier experiences.",
+    insight: "Consistent attunement helps regulate emotional states and gradually reshape patterns of connection, allowing for new ways of relating to emerge."
   }
 ];
 
