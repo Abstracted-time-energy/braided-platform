@@ -17,38 +17,64 @@ const BraidedLogo = ({ className = "", darkMode = false }) => {
   return (
     <div className={baseClass}>
       <div className="relative flex items-center">
-        {/* SVG Circle with Half Circles */}
-        <div className="mr-3">
-          <svg width="40" height="40" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        {/* SVG Circle with Half Circles - positioned behind */}
+        <div className="absolute left-1/2 -translate-x-1/2">
+          <svg width="80" height="80" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
             {/* Background */}
-            <circle cx="60" cy="60" r="58" fill="#F5F0E1" stroke="#3A2718" strokeWidth="2" />
+            <circle cx="60" cy="60" r="58" fill="#F5F0E1" opacity="0.95" />
+            
+            {/* Grey layer */}
+            {/* Top grey half-circles */}
+            <path d="M20,60 C20,35 38,20 60,20 C82,20 100,35 100,60" 
+                  fill="none" stroke="#4A5568" strokeWidth="6" strokeLinecap="round" opacity="0.2" />
+            <path d="M28,60 C28,40 42,28 60,28 C78,28 92,40 92,60" 
+                  fill="none" stroke="#4A5568" strokeWidth="6" strokeLinecap="round" opacity="0.15" />
+            <path d="M36,60 C36,45 46,36 60,36 C74,36 84,45 84,60" 
+                  fill="none" stroke="#4A5568" strokeWidth="6" strokeLinecap="round" opacity="0.1" />
+            
+            {/* Bottom grey half-circles */}
+            <path d="M20,60 C20,85 38,100 60,100 C82,100 100,85 100,60" 
+                  fill="none" stroke="#4A5568" strokeWidth="6" strokeLinecap="round" opacity="0.2" />
+            <path d="M28,60 C28,80 42,92 60,92 C78,92 92,80 92,60" 
+                  fill="none" stroke="#4A5568" strokeWidth="6" strokeLinecap="round" opacity="0.15" />
+            <path d="M36,60 C36,75 46,84 60,84 C74,84 84,75 84,60" 
+                  fill="none" stroke="#4A5568" strokeWidth="6" strokeLinecap="round" opacity="0.1" />
+
+            {/* Dark blue outer layer */}
+            {/* Top dark blue half-circle */}
+            <path d="M15,60 C15,32 35,15 60,15 C85,15 105,32 105,60" 
+                  fill="none" stroke="#2D3B4D" strokeWidth="6" strokeLinecap="round" opacity="0.4" />
+            {/* Bottom dark blue half-circle */}
+            <path d="M15,60 C15,88 35,105 60,105 C85,105 105,88 105,60" 
+                  fill="none" stroke="#2D3B4D" strokeWidth="6" strokeLinecap="round" opacity="0.4" />
             
             {/* Top half-circles */}
             <path d="M20,60 C20,35 38,20 60,20 C82,20 100,35 100,60" 
-                  fill="none" stroke="#64B5BA" strokeWidth="8" strokeLinecap="round" />
+                  fill="none" stroke="#64B5BA" strokeWidth="6" strokeLinecap="round" opacity="0.7" />
             <path d="M28,60 C28,40 42,28 60,28 C78,28 92,40 92,60" 
-                  fill="none" stroke="#8ED3D7" strokeWidth="8" strokeLinecap="round" />
+                  fill="none" stroke="#8ED3D7" strokeWidth="6" strokeLinecap="round" opacity="0.5" />
             <path d="M36,60 C36,45 46,36 60,36 C74,36 84,45 84,60" 
-                  fill="none" stroke="#AA7C52" strokeWidth="8" strokeLinecap="round" />
+                  fill="none" stroke="#AA7C52" strokeWidth="6" strokeLinecap="round" opacity="0.6" />
             
             {/* Bottom half-circles */}
             <path d="M20,60 C20,85 38,100 60,100 C82,100 100,85 100,60" 
-                  fill="none" stroke="#64B5BA" strokeWidth="8" strokeLinecap="round" />
+                  fill="none" stroke="#64B5BA" strokeWidth="6" strokeLinecap="round" opacity="0.7" />
             <path d="M28,60 C28,80 42,92 60,92 C78,92 92,80 92,60" 
-                  fill="none" stroke="#8ED3D7" strokeWidth="8" strokeLinecap="round" />
+                  fill="none" stroke="#8ED3D7" strokeWidth="6" strokeLinecap="round" opacity="0.5" />
             <path d="M36,60 C36,75 46,84 60,84 C74,84 84,75 84,60" 
-                  fill="none" stroke="#AA7C52" strokeWidth="8" strokeLinecap="round" />
+                  fill="none" stroke="#AA7C52" strokeWidth="6" strokeLinecap="round" opacity="0.6" />
             
             {/* Center band */}
-            <rect x="15" y="55" width="90" height="10" fill="#F5F0E1" />
-            
-            {/* Border */}
-            <circle cx="60" cy="60" r="58" fill="none" stroke="#3A2718" strokeWidth="2" />
+            <rect x="15" y="55" width="90" height="10" fill="#F5F0E1" opacity="0.95" />
           </svg>
         </div>
         
-        {/* Text */}
-        <div className={`font-semibold tracking-wider text-2xl ${darkMode ? "text-white" : "text-[#3A2718]"}`}>
+        {/* Text - positioned in front */}
+        <div className={`relative z-10 font-light tracking-[0.25em] text-2xl ${
+          darkMode 
+            ? "text-white drop-shadow-[0_2px_2px_rgba(74,85,104,0.3)]" 
+            : "text-[#2D3B4D] drop-shadow-[0_2px_2px_rgba(74,85,104,0.2)]"
+        }`}>
           BRAIDED
         </div>
       </div>

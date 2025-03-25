@@ -52,7 +52,7 @@ export default function Home() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1, delay: 0.3 }}
-                  className="space-y-6 mb-12"
+                  className="space-y-8 mb-14"
                 >
                   <p className="text-xl md:text-2xl text-blue-50/90 leading-relaxed font-light">
                     A space for contemplating the interconnected layers that form your experience.
@@ -93,7 +93,7 @@ export default function Home() {
                   <span className="block text-blue-200 font-normal mb-2">whirlpool</span>
                   <span className="block">as a reflection of your journey</span>
                 </h1>
-                <div className="space-y-6 mb-12">
+                <div className="space-y-8 mb-14">
                   <p className="text-xl md:text-2xl text-blue-50/90 leading-relaxed font-light">
                     A space for contemplating the interconnected layers that form your experience.
                   </p>
@@ -133,7 +133,7 @@ export default function Home() {
       {/* Enhanced Concept Introduction with cleaner animations */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             {/* Section intro with visual separator */}
             <div className="mb-16 text-center">
               <motion.div
@@ -149,14 +149,14 @@ export default function Home() {
               </motion.div>
             </div>
             
-            <div className="prose prose-lg mx-auto">
+            <div className="prose prose-lg max-w-5xl mx-auto space-y-16">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.7 }}
               >
-                <p className="text-gray-700 text-xl leading-relaxed">
+                <p className="text-gray-700 text-xl leading-loose">
                   Imagine a vast riverscape where countless rivers intertwine, forming intricate braided patterns. Each river represents unique subcultures, cultures, ethnicities, and countries. Within these rivers, multiple whirlpools make up whanau and communities which connect to form larger pools of towns and cities.
                 </p>
               </motion.div>
@@ -167,7 +167,7 @@ export default function Home() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
               >
-                <p className="text-gray-700 text-xl leading-relaxed">
+                <p className="text-gray-700 text-xl leading-loose">
                   Nestled within these communities, individual whirlpools emerge. At the core of each whirlpool lies a centre of intelligence and energy that shapes the individual's experience and interaction with the world around them. This core is the product of a long and complex moment to moment journey, tracing back to the origins of the universe.
                 </p>
               </motion.div>
@@ -192,20 +192,20 @@ export default function Home() {
             </motion.div>
 
             {/* Content blocks with cleaner design */}
-            <div className="prose prose-lg mx-auto space-y-12">
+            <div className="prose prose-lg max-w-5xl mx-auto space-y-16">
               {/* Content section 1 - Origins */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.7 }}
-                className="p-6 border-l-3 border-blue-200 bg-blue-50/50 rounded-r-lg"
+                className="p-8 border-l-3 border-blue-200 bg-blue-50/50 rounded-r-lg space-y-6"
               >
-                <h3 className="text-2xl text-gray-800 mb-4 font-light">Origins & Evolution</h3>
-                <p className="text-gray-700 text-lg leading-relaxed">
+                <h3 className="text-2xl text-gray-800 mb-6 font-light">Origins & Evolution</h3>
+                <p className="text-gray-700 text-lg leading-loose">
                   Just as rivers have evolved over time, flowing from the top of mountains, shaped by the forces of nature, so too have the whirlpools been formed by the material evolution of the world. From the Big Bang to the emergence of life on Earth, from the development of genetic diversity to the rise of human civilizations, each whirlpool carries within it the legacy of this history.
                 </p>
-                <p className="text-gray-700 text-lg leading-relaxed">
+                <p className="text-gray-700 text-lg leading-loose">
                   The journey of each whirlpool is shaped not only by its own unique experiences but also by
                   the countless interactions and relationships of its ancestors. The current whirlpools are the product of the genetic, cultural, and environmental influences that have been passed down through generations, the memory of all that has been before, forming the bedrock upon which their individual identities are built. We are a weave in the continuous flow of information passed down throughout time. 
                 </p>
@@ -217,13 +217,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.7 }}
-                className="p-6 border-r-3 border-teal-200 bg-teal-50/50 rounded-l-lg"
+                className="p-8 border-r-3 border-teal-200 bg-teal-50/50 rounded-l-lg space-y-6"
               >
-                <h3 className="text-2xl text-gray-800 mb-4 font-light">The Interconnected Exchange</h3>
-                <p className="text-gray-700 text-lg leading-relaxed">
+                <h3 className="text-2xl text-gray-800 mb-6 font-light">The Interconnected Exchange</h3>
+                <p className="text-gray-700 text-lg leading-loose">
                   As the whirlpools navigate the braided rivers of life, they engage in a constant exchange of energy and information with their surroundings. They are shaped by the people, communities, cultures and environments they encounter, while also contributing their own unique perspectives and experiences to the larger riverscape.
                 </p>
-                <p className="text-gray-700 text-lg leading-relaxed">
+                <p className="text-gray-700 text-lg leading-loose">
                   Whirlpools are impacted by their environment and have impacts on their environments. This reciprocal exchange highlights a deep interconnection, as each whirlpool is both a product of and a contributor to the world around it. The whirlpools are not separate, isolated entities but rather part of a larger, interdependent web of relationships that spans across time and space.
                 </p>
               </motion.div>
@@ -234,12 +234,12 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.7 }}
-                className="mt-6"
+                className="mt-8 space-y-8"
               >
-                <p className="text-gray-700 text-xl leading-relaxed">
+                <p className="text-gray-700 text-xl leading-loose">
                   By recognising this interconnectedness, we can develop a deeper appreciation for the ways in which our individual journeys are woven into the larger tapestry of life. We can acknowledge the countless influences that have shaped us; from the physical forces that set the universe in motion to the genetic flow of information through time, to the experiences, memories and relationships that have moulded our personal identities.
                 </p>
-                <p className="text-gray-700 text-xl leading-relaxed">
+                <p className="text-gray-700 text-xl leading-loose">
                   This understanding empowers us to embrace our roles as active participants in the ongoing evolution of the braided rivers of life. By engaging mindfully and compassionately with others, we contribute to the health and vitality of the larger riverscape, fostering more harmonious, coherent and connected individuals, relationships, and communities.
                 </p>
               </motion.div>
@@ -291,7 +291,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-medium text-gray-800 mb-2">Growth & Harmony</h3>
+                <h3 className="text-xl font-medium text-gray-800 mb-2">Growth</h3>
                 <p className="text-gray-600">Develop strategies for navigating life's currents with mindfulness and purpose.</p>
               </motion.div>
             </div>
