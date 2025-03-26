@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 
 // Define conversation types
@@ -8,6 +8,7 @@ interface ConversationType {
   id: string;
   name: string;
   description: string;
+  icon: string;
 }
 
 // Define AI model interface
@@ -26,17 +27,20 @@ const conversationTypes: ConversationType[] = [
   {
     id: 'general',
     name: 'General',
-    description: 'For everyday questions and conversations about wellbeing, personal growth, and the whirlpool model.'
+    description: 'For everyday questions and conversations about wellbeing, personal growth, and the whirlpool model.',
+    icon: '🌊'
   },
   {
     id: 'personal',
     name: 'Personal',
-    description: 'For deeper explorations of your whirlpool layers, patterns, and personalized practices.'
+    description: 'For deeper explorations of your whirlpool layers, patterns, and personalized practices.',
+    icon: '🌀'
   },
   {
     id: 'private',
     name: 'Private',
-    description: 'For sensitive topics with enhanced privacy - no data is stored or used for model training.'
+    description: 'For sensitive topics with enhanced privacy - no data is stored or used for model training.',
+    icon: '🔒'
   }
 ];
 
@@ -195,9 +199,8 @@ interface AIModelSelectorProps {
 const AIModelSelector: React.FC<AIModelSelectorProps> = ({ onSelect }) => {
   const [conversationType, setConversationType] = useState<string>('general');
   const [selectedModel, setSelectedModel] = useState<string>('claude-3-sonnet');
-  const [showTips, setShowTips] = useState(false);
+  const [showModelDetails, setShowModelDetails] = useState(false);
 
-  // Find the selected model object
   const selectedModelDetails = aiModels.find(m => m.id === selectedModel);
   const selectedConversationDetails = conversationTypes.find(t => t.id === conversationType);
 
@@ -206,98 +209,166 @@ const AIModelSelector: React.FC<AIModelSelectorProps> = ({ onSelect }) => {
   };
 
   return (
-    <Card className="p-6">
-      <CardHeader>
-        <CardTitle className="text-2xl text-center">Start a Conversation</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="space-y-6">
-          <div>
-            <label className="block text-sm font-medium mb-2 text-gray-700">Choose Conversation Type</label>
-            <div className="relative">
-              <select 
-                value={conversationType}
-                onChange={(e) => setConversationType(e.target.value)}
-                className="w-full p-3 bg-gray-50 rounded-md text-gray-700 border border-gray-300 focus:border-wairua focus:ring focus:ring-wairua appearance-none pr-10"
-              >
-                {conversationTypes.map(type => (
-                  <option key={type.id} value={type.id}>{type.name}</option>
-                ))}
-              </select>
-              <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                <svg className="w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </div>
-            </div>
-            {selectedConversationDetails && (
-              <p className="mt-2 text-sm text-gray-500">{selectedConversationDetails.description}</p>
-            )}
-          </div>
-          
-          <div>
-            <label className="block text-sm font-medium mb-2 text-gray-700">Choose AI Model</label>
-            <div className="relative">
-              <select 
-                value={selectedModel}
-                onChange={(e) => setSelectedModel(e.target.value)}
-                className="w-full p-3 bg-gray-50 rounded-md text-gray-700 border border-gray-300 focus:border-wairua focus:ring focus:ring-wairua appearance-none pr-10"
-              >
-                {aiModels.map(model => (
-                  <option key={model.id} value={model.id}>
-                    {model.icon} {model.name} ({model.provider})
-                  </option>
-                ))}
-              </select>
-              <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                <svg className="w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </div>
-            </div>
-            {selectedModelDetails && (
-              <p className="mt-2 text-sm text-gray-500">{selectedModelDetails.description}</p>
-            )}
-          </div>
-          
-          <div className="pt-2">
-            <Button
-              className="w-full"
-              onClick={handleStartChat}
-            >
-              Start Chat
-            </Button>
-          </div>
-          
-          <div>
-            <button
-              onClick={() => setShowTips(!showTips)}
-              className="text-sm text-wairua hover:text-wairua-dark transition-colors"
-            >
-              {showTips ? 'Hide tips' : 'How to get the most from your chat'}
-            </button>
-            
-            {showTips && (
+    <div className="space-y-8">
+      <div className="space-y-6">
+        <div>
+          <h3 className="text-lg font-medium text-gray-900 mb-4">Choose Conversation Type</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {conversationTypes.map((type) => (
               <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="mt-4 bg-gray-50 p-4 rounded-md border border-gray-200"
+                key={type.id}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <h3 className="font-medium mb-2">Tips for effective conversations:</h3>
-                <ul className="list-disc pl-5 space-y-1 text-sm text-gray-600">
-                  <li>Be specific with your questions</li>
-                  <li>Provide context about your situation</li>
-                  <li>Ask for examples when discussing concepts</li>
-                  <li>Don't hesitate to ask follow-up questions</li>
-                  <li>Share your assessment results for personalized insights</li>
-                </ul>
+                <button 
+                  className="w-full"
+                  onClick={() => setConversationType(type.id)}
+                >
+                  <Card
+                    className={`transition-all duration-200 ${
+                      conversationType === type.id
+                        ? 'ring-2 ring-wairua shadow-lg'
+                        : 'hover:shadow-md'
+                    }`}
+                  >
+                    <div className="p-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="text-2xl">{type.icon}</span>
+                        <h4 className="font-medium text-gray-900">{type.name}</h4>
+                      </div>
+                      <p className="text-sm text-gray-600">{type.description}</p>
+                    </div>
+                  </Card>
+                </button>
               </motion.div>
-            )}
+            ))}
           </div>
         </div>
-      </CardContent>
-    </Card>
+
+        <div>
+          <h3 className="text-lg font-medium text-gray-900 mb-4">Select AI Model</h3>
+          <div className="grid grid-cols-1 gap-4">
+            {aiModels.map((model) => (
+              <motion.div
+                key={model.id}
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.99 }}
+              >
+                <button 
+                  className="w-full text-left"
+                  onClick={() => {
+                    setSelectedModel(model.id);
+                    setShowModelDetails(true);
+                  }}
+                >
+                  <Card
+                    className={`transition-all duration-200 ${
+                      selectedModel === model.id
+                        ? 'ring-2 ring-wairua shadow-lg'
+                        : 'hover:shadow-md'
+                    }`}
+                  >
+                    <div className="p-4">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <span className="text-2xl">{model.icon}</span>
+                          <div>
+                            <h4 className="font-medium text-gray-900">{model.name}</h4>
+                            <p className="text-sm text-gray-500">{model.provider}</p>
+                          </div>
+                        </div>
+                        <motion.div
+                          animate={{ rotate: selectedModel === model.id ? 180 : 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <svg
+                            className="w-5 h-5 text-gray-400"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </motion.div>
+                      </div>
+
+                      <AnimatePresence>
+                        {selectedModel === model.id && showModelDetails && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="mt-4 space-y-4"
+                          >
+                            <p className="text-sm text-gray-600">{model.description}</p>
+                            
+                            <div>
+                              <h5 className="text-sm font-medium text-gray-700 mb-2">Strengths</h5>
+                              <div className="flex flex-wrap gap-2">
+                                {model.strengths.map((strength, index) => (
+                                  <span
+                                    key={index}
+                                    className="px-2 py-1 bg-wairua/10 text-wairua-dark rounded-full text-xs"
+                                  >
+                                    {strength}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+
+                            <div>
+                              <h5 className="text-sm font-medium text-gray-700 mb-2">Best For</h5>
+                              <div className="flex flex-wrap gap-2">
+                                {model.bestFor.map((use, index) => (
+                                  <span
+                                    key={index}
+                                    className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs"
+                                  >
+                                    {use}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  </Card>
+                </button>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="flex justify-end">
+        <Button
+          onClick={handleStartChat}
+          className="px-8 py-2 text-lg"
+        >
+          Start Conversation
+          <svg
+            className="w-5 h-5 ml-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M13 5l7 7-7 7M5 12h15"
+            />
+          </svg>
+        </Button>
+      </div>
+    </div>
   );
 };
 
